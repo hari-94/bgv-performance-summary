@@ -62,97 +62,33 @@ strong{font-weight:650}
 .tile.accent .n{color:var(--c1)}
 
 
-/* hero reel */
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,450px);gap:36px;align-items:center}
-.reel{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px 20px 10px}
-.reel-stage{position:relative;height:318px}
-.scene{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
-.scene.on{opacity:1;visibility:visible;transition:opacity .45s ease}
-.sc-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c1)}
-.sc-h{font-size:20px;font-weight:750;line-height:1.25;margin:4px 0 14px;letter-spacing:-.01em}
-.sc-cap{font-size:14px;color:var(--text-2);line-height:1.45;margin-top:auto}
-.scene.on .sc-h{animation:rise .5s ease both}
-@keyframes rise{from{opacity:0;transform:translateY(8px)}}
-@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.96)}}
-@keyframes growx{from{transform:scaleX(0)}}
-.ra{display:grid;gap:10px;margin-bottom:14px}
-.ra-row{display:grid;grid-template-columns:108px minmax(0,1fr) 44px;white-space:nowrap;align-items:center;gap:10px;font-size:14px;color:var(--text-2)}
-.ra-row.me{color:var(--text);font-weight:700}
-.ra-t{height:26px;background:var(--empty);border-radius:6px;overflow:hidden}
-.ra-b{height:100%;background:var(--peer);border-radius:0 6px 6px 0;transform-origin:left center}
-.ra-row.me .ra-b{background:var(--c1)}
-.scene.on .ra-b{animation:growx 1.1s cubic-bezier(.2,.7,.2,1) both}
-.scene.on .ra-row:nth-child(2) .ra-b{animation-delay:.25s}
-.ra-v{text-align:right;font-variant-numeric:tabular-nums;font-size:16px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span{font-size:13px;font-weight:600;background:var(--soft);color:var(--c1);border-radius:999px;padding:4px 10px}
-.scene.on .chips span{animation:pop .4s ease both;animation-delay:calc(1.1s + var(--i) * .18s)}
-.flow-mini{width:100%;height:auto;display:block;margin-bottom:8px}
-.fm-p{fill:none;stroke:var(--c1);stroke-width:2;stroke-dasharray:1 1;opacity:.7}
-.scene.on .fm-p{animation:draw .9s ease both}
-@keyframes draw{from{stroke-dashoffset:1}}
-.fm-n rect{fill:var(--surface);stroke:var(--line-2);stroke-width:1.2}
-.fm-n.core rect{fill:var(--soft);stroke:var(--c1);stroke-width:1.6}
-.fm-n.out rect{stroke:var(--c1)}
-.fm-n text{font:600 13px Inter,system-ui,sans-serif;fill:var(--text);text-anchor:middle}
-.fm-n text.s{font-weight:400;font-size:11px;fill:var(--text-2)}
-.fm-d circle,.push-arrow circle{fill:var(--c1);stroke:var(--surface);stroke-width:2}
-.scene.on .fm-d{animation:pop .3s ease .7s both}
-.push-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.phone{flex:0 0 78px;height:124px;border:2px solid var(--line-2);border-radius:14px;padding:12px 9px 9px;display:flex;flex-direction:column;gap:6px;background:var(--surface)}
-.ph-top{width:24px;height:4px;border-radius:2px;background:var(--line-2);margin:0 auto 4px}
-.ph-l{height:6px;border-radius:3px;background:var(--empty)}
-.ph-l.s{width:65%}
-.push{margin-top:auto;height:26px;border-radius:8px;background:var(--c1);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
-.push span{grid-area:1/1}
-.push .pa{opacity:0}
-.scene.on .push{animation:press .5s ease .5s both}
-.scene.on .push .pa{animation:holdOn .95s linear}
-.scene.on .push .pb{animation:holdOff .95s linear}
-@keyframes press{50%{transform:scale(.88)}}
-@keyframes holdOn{from,to{opacity:1}}
-@keyframes holdOff{from,to{opacity:0}}
-.push-arrow{flex:0 0 52px;height:20px;overflow:visible}
-.push-arrow path{stroke:var(--c1);stroke-width:2;fill:none}
-.hs{flex:1;min-width:0;border:1.5px solid var(--c1);border-radius:12px;padding:8px 10px 10px;background:var(--surface)}
-.hs-h{font-size:12.5px;font-weight:700;margin-bottom:6px}
-.hs-g{display:grid;grid-template-columns:repeat(8,1fr);gap:3px}
-.hs-g i{aspect-ratio:1;border-radius:3px;background:var(--c1)}
-.scene.on .hs-g i{animation:sq .25s ease both;animation-delay:calc(1s + var(--i) * 28ms)}
-@keyframes sq{from{background:var(--empty);transform:scale(.7)}}
-.times{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;margin-bottom:8px}
-.times .was{color:var(--text-3);text-decoration:line-through}
-.times .now{color:var(--c1);font-weight:700}
-.scene.on .times .now{animation:pop .4s ease 2.2s both}
-.donut-row{display:flex;align-items:center;gap:16px;margin-bottom:10px}
-.donut{flex:0 0 132px;width:132px;height:132px}
-.donut circle{fill:none;stroke-width:16;transform:rotate(-90deg);transform-origin:70px 70px}
-.d-bg{stroke:var(--empty)}
-.scene.on .d-a{animation:arc .8s ease-out both}
-@keyframes arc{from{stroke-dasharray:0 326.7}}
-.d-n{font:800 28px Inter,system-ui,sans-serif;fill:var(--text);text-anchor:middle}
-.d-s{font:500 11px Inter,system-ui,sans-serif;fill:var(--text-2);text-anchor:middle}
-.d-leg{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13.5px;color:var(--text-2);line-height:1.35}
-.d-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
-.d-leg b{color:var(--text)}
-.scene.on .d-leg li{animation:pop .4s ease both;animation-delay:calc(.4s + var(--i) * .45s)}
-.big{font-size:52px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--c1);margin-bottom:12px;font-variant-numeric:tabular-nums}
-.big small{font-size:16px;font-weight:600;color:var(--text-2);letter-spacing:0}
-.stack{display:flex;gap:2px;height:14px;border-radius:4px;overflow:hidden;margin-bottom:12px}
-.stack i{background:var(--c1)}
-.stack i:nth-child(even){background:color-mix(in srgb,var(--c1) 62%,var(--surface))}
-.scene.on .stack{animation:wipe 1.2s cubic-bezier(.2,.7,.2,1) both}
-@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-.reel-foot{display:flex;align-items:center;gap:12px;margin-top:8px}
-.reel-pp{flex:0 0 32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:11px;cursor:pointer}
-.reel-dots{display:flex;gap:6px;flex:1}
-.reel-dots button{flex:1;height:24px;border:0;background:none;padding:0;cursor:pointer;position:relative}
-.reel-dots button:before{content:"";position:absolute;left:0;right:0;top:10px;height:4px;border-radius:2px;background:var(--empty)}
-.reel-dots button span{position:absolute;left:0;top:10px;height:4px;border-radius:2px;background:var(--c1);width:0}
-.reel-dots button.done span{width:100%}
-.reel-dots button.on span{animation:fill var(--rdur,6s) linear forwards}
-.reel.paused .reel-dots button.on span{animation-play-state:paused}
-.reel.still .reel-dots button.on span{animation:none;width:100%}
+/* intro film */
+.hero{padding-top:28px}
+.film{position:relative;border-radius:18px;overflow:hidden;background:#0c1220;box-shadow:0 24px 60px rgba(8,16,32,.28)}
+.film svg{display:block;width:100%;height:auto;aspect-ratio:16/9}
+.film .sc{visibility:hidden}
+.film-bar{display:flex;align-items:center;gap:10px;padding:8px 12px;background:#090e18;color:#c9d1e0;font-size:13px}
+.film-bar button{flex:0 0 36px;height:36px;border:0;border-radius:50%;background:none;color:#fff;cursor:pointer;display:grid;place-items:center}
+.film-bar button:hover,.film-bar button:focus-visible{background:rgba(255,255,255,.12);outline:none}
+.f-track{flex:1;height:24px;position:relative;cursor:pointer;touch-action:none}
+.f-track:before{content:"";position:absolute;left:0;right:0;top:10px;height:4px;border-radius:2px;background:#26324a}
+.f-fill{position:absolute;left:0;top:10px;height:4px;border-radius:2px;background:#3987e5;width:0}
+.f-tick{position:absolute;top:7px;width:2px;height:10px;margin-left:-1px;border-radius:1px;background:#5d6680}
+.f-knob{position:absolute;top:6px;left:0;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(57,135,229,.35)}
+.f-time{font-variant-numeric:tabular-nums;white-space:nowrap}
+.f-chap{white-space:nowrap;color:#fff;font-weight:600;min-width:104px}
+.f-big{position:absolute;left:50%;top:calc(50% - 26px);transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;border:0;background:rgba(57,135,229,.94);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 12px 32px rgba(0,0,0,.4);transition:transform .2s}
+.f-big:hover{transform:translate(-50%,-50%) scale(1.06)}
+.film:not(.fresh) .f-big,.film.nogsap .film-bar{display:none}
+.film:fullscreen{display:flex;flex-direction:column;justify-content:center;background:#000;border-radius:0}
+.film:fullscreen svg{width:auto;max-width:100%;max-height:calc(100vh - 52px);margin:0 auto}
+.intro{margin-top:32px}
+@media (max-width:640px){
+  .film{border-radius:12px}
+  .f-chap{display:none}
+  .f-big{width:64px;height:64px;top:calc(50% - 24px)}
+  .film-bar{gap:6px;padding:6px 8px}
+}
 
 /* nav */
 nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -296,7 +232,6 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
 
 @media (max-width:860px){
   .tiles{grid-template-columns:1fr 1fr}
-  .hero-grid{grid-template-columns:1fr;gap:24px}
   .caption{min-height:200px}
   .mods{grid-template-columns:1fr 1fr}
   .money{grid-template-columns:1fr 1fr}
@@ -311,12 +246,11 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
   .card{padding:16px}
   section{padding-top:44px}
 }
-@media (max-width:400px){ .tiles,.money{grid-template-columns:1fr} .reel{padding:16px 14px 8px} .reel-stage{height:340px} .sc-h{font-size:18px} .big{font-size:44px} .donut{flex-basis:112px;width:112px;height:112px} }
+@media (max-width:400px){ .tiles,.money{grid-template-columns:1fr} }
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
   .grow,.seg,.sv .tr div,.split,.mod,.cal-cell{transition:none!important;transform:none!important;clip-path:none!important;opacity:1!important}
   .caption.swap{animation:none}
-  .reel *{animation:none!important}
 }
 </style>
 </head>
@@ -325,106 +259,27 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
 
 <header class="hero">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <div class="eyebrow">2026 work summary · BGV Housekeeping</div>
-        <h1>Hari Vardan</h1>
-        <div class="role">Room inspector (RQS) · January – October 2026</div>
-        <p class="lead">Hari inspects more rooms per day than anyone else on the full-time inspection team. Alongside that, mostly on personal time, Hari designed and built the software the housekeeping department now uses to plan and run every day.</p>
-      </div>
-
-      <div class="reel" id="reel" aria-roledescription="carousel" aria-label="Highlights">
-        <div class="reel-stage">
-
-          <div class="scene" data-label="The inspector">
-            <div class="sc-k">The inspector</div>
-            <div class="sc-h">Most rooms inspected per day of the 11 full-time inspectors</div>
-            <div class="ra">
-              <div class="ra-row me"><span class="ra-n">Hari</span><div class="ra-t"><div class="ra-b" style="width:96.4%"></div></div><b class="ra-v"><span class="rc" data-to="10.6" data-dec="1">10.6</span></b></div>
-              <div class="ra-row"><span class="ra-n">Team average</span><div class="ra-t"><div class="ra-b" style="width:82.7%"></div></div><b class="ra-v"><span class="rc" data-to="9.1" data-dec="1">9.1</span></b></div>
-            </div>
-            <div class="chips"><span style="--i:0">#1 of 11</span><span style="--i:1">1,124 rooms inspected</span><span style="--i:2">0 last-minute absences</span></div>
-            <div class="sc-cap">Rooms inspected per inspection day, Jan 1 – Oct 14, 2026.</div>
-          </div>
-
-          <div class="scene" data-label="5 AM">
-            <div class="sc-k">5:00 AM · every day</div>
-            <div class="sc-h">Room lists are ready before anyone arrives</div>
-            <svg class="flow-mini" viewBox="0 0 400 150" aria-hidden="true">
-              <path class="fm-p" pathLength="1" id="fm1" d="M112,22 C140,22 140,66 168,70"/>
-              <path class="fm-p" pathLength="1" id="fm2" d="M112,75 C140,75 140,75 168,75"/>
-              <path class="fm-p" pathLength="1" id="fm3" d="M112,128 C140,128 140,84 168,80"/>
-              <path class="fm-p" pathLength="1" id="fm4" d="M262,68 C285,68 285,38 300,38"/>
-              <path class="fm-p" pathLength="1" id="fm5" d="M262,82 C285,82 285,112 300,112"/>
-              <g class="fm-n"><rect x="2" y="6" width="110" height="32" rx="8"/><text x="57" y="27">Room list</text></g>
-              <g class="fm-n"><rect x="2" y="59" width="110" height="32" rx="8"/><text x="57" y="80">Arrivals</text></g>
-              <g class="fm-n"><rect x="2" y="112" width="110" height="32" rx="8"/><text x="57" y="133">Staff schedule</text></g>
-              <g class="fm-n core"><rect x="168" y="48" width="94" height="54" rx="10"/><text x="215" y="72">Office PC</text><text class="s" x="215" y="89">builds the lists</text></g>
-              <g class="fm-n out"><rect x="300" y="18" width="98" height="40" rx="8"/><text x="349" y="35">Phones</text><text class="s" x="349" y="50">each person</text></g>
-              <g class="fm-n out"><rect x="300" y="92" width="98" height="40" rx="8"/><text x="349" y="109">Inspections</text><text class="s" x="349" y="124">today's tab</text></g>
-              <g class="fm-d">
-                <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#fm1"/></animateMotion></circle>
-                <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="-0.6s"><mpath href="#fm2"/></animateMotion></circle>
-                <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="-1.2s"><mpath href="#fm3"/></animateMotion></circle>
-                <circle r="4"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.3s"><mpath href="#fm4"/></animateMotion></circle>
-                <circle r="4"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-1.0s"><mpath href="#fm5"/></animateMotion></circle>
-              </g>
-            </svg>
-            <div class="sc-cap">The office PC reads the hotel's reports and the staff schedule, builds every room list by the department's rules and sends each person's rooms to their phone.</div>
-          </div>
-
-          <div class="scene" data-label="7 AM">
-            <div class="sc-k">7:00 AM</div>
-            <div class="sc-h">One button assigns every room in HotSOS</div>
-            <div class="push-row">
-              <div class="phone"><div class="ph-top"></div><div class="ph-l"></div><div class="ph-l s"></div><div class="ph-l"></div><div class="push"><span class="pa">Push</span><span class="pb">Sent ✓</span></div></div>
-              <svg class="push-arrow" viewBox="0 0 60 20" aria-hidden="true"><path id="pa1" d="M2,10 H54"/><path d="M48,4 L56,10 L48,16"/><circle r="3.5"><animateMotion dur="1s" repeatCount="indefinite"><mpath href="#pa1"/></animateMotion></circle></svg>
-              <div class="hs"><div class="hs-h">HotSOS</div><div class="hs-g" id="hs-g"></div></div>
-            </div>
-            <div class="times"><span class="was">By hand: about 40 min of typing</span><span class="now">Now: under 1 minute</span></div>
-            <div class="sc-cap">An inspector checks the plan and presses Push. The Engineering team's daily sheet fills itself at the same time.</div>
-          </div>
-
-          <div class="scene" data-label="Time given">
-            <div class="sc-k">Time given</div>
-            <div class="sc-h">Built mostly on personal time</div>
-            <div class="donut-row">
-              <svg class="donut" viewBox="0 0 140 140" aria-hidden="true">
-                <circle cx="70" cy="70" r="52" class="d-bg"/>
-                <circle cx="70" cy="70" r="52" class="d-a" style="stroke:var(--c1);stroke-dasharray:163.4 326.7;stroke-dashoffset:0"/>
-                <circle cx="70" cy="70" r="52" class="d-a" style="stroke:var(--c2);stroke-dasharray:68.6 326.7;stroke-dashoffset:-163.4;animation-delay:.9s"/>
-                <circle cx="70" cy="70" r="52" class="d-a" style="stroke:var(--paid);stroke-dasharray:94.7 326.7;stroke-dashoffset:-232;animation-delay:1.4s"/>
-                <text x="70" y="72" class="d-n"><tspan class="rc" data-to="71">71</tspan>%</text>
-                <text x="70" y="91" class="d-s">personal time</text>
-              </svg>
-              <ul class="d-leg">
-                <li style="--i:0"><i style="background:var(--c1)"></i><b>48 h</b> around full inspection shifts</li>
-                <li style="--i:1"><i style="background:var(--c2)"></i><b>21 h</b> on days off</li>
-                <li style="--i:2"><i style="background:var(--paid)"></i><b>27 h</b> on the 8 project days on the schedule</li>
-              </ul>
-            </div>
-            <div class="sc-cap">96 measured hours of building since May 30. Only 8 of Hari's 89 working days were set aside for it.</div>
-          </div>
-
-          <div class="scene" data-label="What it saves">
-            <div class="sc-k">What it gives back</div>
-            <div class="sc-h">Staff time saved every year</div>
-            <div class="big"><span class="rc" data-to="889" data-sep="1">889</span><small> hours a year</small></div>
-            <div class="stack" aria-hidden="true"><i style="flex:304"></i><i style="flex:170"></i><i style="flex:122"></i><i style="flex:104"></i><i style="flex:104"></i><i style="flex:61"></i><i style="flex:24"></i></div>
-            <div class="chips"><span style="--i:0">≈ $22,000 a year</span><span style="--i:1">$0 a month to run</span><span style="--i:2">repaid in 2–3 months</span></div>
-            <div class="sc-cap">Room lists, HotSOS, status calls, staff planning, budget, Engineering sheet and reports. Estimates at $25 an hour, for managers to confirm.</div>
-          </div>
-
-        </div>
-        <div class="reel-foot">
-          <button class="reel-pp" id="reel-pp" type="button" aria-label="Pause highlights">❚❚</button>
-          <div class="reel-dots" id="reel-dots"></div>
-        </div>
+    <div class="film" id="film">
+      <svg id="film-svg" viewBox="0 0 1280 720" role="img" aria-label="A one-minute animated summary of Hari Vardan's year: top inspector on the team, the morning work done by hand before, the apps Hari built, how they run the day, the personal time given, and the staff time saved."></svg>
+      <button class="f-big" id="f-big" type="button" aria-label="Play the intro"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+      <div class="film-bar">
+        <button id="f-play" type="button" aria-label="Play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+        <div class="f-track" id="f-track" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="f-fill" id="f-fill"></div><div class="f-knob" id="f-knob"></div></div>
+        <span class="f-time" id="f-time">0:00</span>
+        <span class="f-chap" id="f-chap">Intro</span>
+        <button id="f-full" type="button" aria-label="Full screen"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
+    <div class="intro">
+      <div class="eyebrow">2026 work summary · BGV Housekeeping</div>
+      <h1>Hari Vardan</h1>
+      <div class="role">Room inspector (RQS) · January – October 2026</div>
+      <p class="lead">Hari's main job is inspecting rooms. Alongside it, much of it on personal time, Hari built software that now helps the housekeeping department plan and run each day. This page sets out both, with the numbers behind them.</p>
+    </div>
+
     <div class="tiles" data-reveal>
-      <div class="tile accent"><div class="n"><span class="count" data-to="10.6" data-dec="1">10.6</span></div><div class="l">rooms inspected per inspection day</div><div class="d">The most of the 11 full-time inspectors. The others average 9.1.</div></div>
+      <div class="tile accent"><div class="n"><span class="count" data-to="10.6" data-dec="1">10.6</span></div><div class="l">rooms inspected per inspection day</div><div class="d">Jan – Oct 2026. The team average is 9.1.</div></div>
       <div class="tile"><div class="n"><span class="count" data-to="2">2</span> apps</div><div class="l">built from scratch</div><div class="d">The BGV Scheduler and the GC8 Budget Tracker. 41 colleagues used the scheduler in the last 30 days.</div></div>
       <div class="tile"><div class="n"><span class="count" data-to="71">71</span>%</div><div class="l">of the building time was personal time</div><div class="d">Only 8 days on the schedule were set aside for the project.</div></div>
       <div class="tile"><div class="n">~<span class="count" data-to="890" data-sep="1">890</span> h</div><div class="l">of staff time saved a year</div><div class="d">About $22,000 a year, and it costs nothing a month to run.</div></div>
@@ -434,7 +289,6 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
 
 <nav class="jump" aria-label="Sections">
   <div class="wrap">
-    <a href="#basics">The basics</a>
     <a href="#inspections">Inspections</a>
     <a href="#apps">The apps</a>
     <a href="#how">How it works</a>
@@ -446,27 +300,11 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
 
 <main class="wrap">
 
-<section id="basics">
-  <div class="sec-head">
-    <span class="num">Start here</span>
-    <h2>The job in one minute</h2>
-    <p>New to hotel housekeeping? These are the only terms you need for this page.</p>
-  </div>
-  <div class="gloss">
-    <div><b>Inspector (RQS)</b><span>Checks each cleaned room before a guest gets it and leads a small team of housekeepers. This is Hari's role.</span></div>
-    <div><b>Full Clean</b><span>A room cleaned top to bottom after a guest checks out. Every one is inspected.</span></div>
-    <div><b>Daily Service</b><span>A lighter tidy-up for guests who are staying on.</span></div>
-    <div><b>Room list (chart)</b><span>One housekeeper's rooms for the day. Building these lists every morning is a big planning job.</span></div>
-    <div><b>HotSOS</b><span>The hotel's system where each room is assigned to a housekeeper and its status is tracked.</span></div>
-    <div><b>SSRS report</b><span>The hotel's daily report of which rooms need cleaning, and how.</span></div>
-  </div>
-</section>
-
 <section id="inspections">
   <div class="sec-head">
     <span class="num">1 · Core job</span>
     <h2>The most rooms inspected per day on the team</h2>
-    <p>From January 1 to October 14, Hari inspected 1,124 rooms, the second-highest total, while on the schedule 11 fewer days than the average full-time inspector.</p>
+    <p>Inspectors check every cleaned room before a guest gets it. From January 1 to October 14, Hari inspected 1,124 rooms, the second-highest total, while on the schedule 11 fewer days than the average full-time inspector.</p>
   </div>
   <div class="card chart" data-reveal>
     <h3>Rooms inspected per inspection day</h3>
@@ -494,7 +332,7 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
   <div class="sec-head">
     <span class="num">2 · Above and beyond</span>
     <h2>Two apps, built from scratch</h2>
-    <p>Each morning, a lot of time went into copying the same information between the hotel's reports, spreadsheets and HotSOS. Hari saw that a computer could do this, then designed and built the software, and now keeps it running.</p>
+    <p>Each morning, a lot of time went into copying the same information between the hotel's reports, spreadsheets and HotSOS, the hotel's room-assignment system. Hari saw that a computer could do this, then designed and built the software, and now keeps it running.</p>
   </div>
   <div class="grid2">
     <div class="card app-card">
@@ -659,6 +497,7 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
 </main>
 <footer><div class="wrap">Prepared October 15, 2026 · Colleagues are not named and appear as Peer 1–10.</div></footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 (() => {
 const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -706,62 +545,6 @@ document.addEventListener("pointerdown", showTip);
 addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });
 
 
-/* ---------- hero reel ---------- */
-(function () {
-  const reel = document.getElementById("reel");
-  const scenes = [...reel.querySelectorAll(".scene")];
-  const dots = document.getElementById("reel-dots"), pp = document.getElementById("reel-pp");
-  const RDUR = 6500;
-  let at = 0, playing = !RM, hover = false, timer = null, startedAt = 0, left = RDUR;
-  document.getElementById("hs-g").innerHTML = Array.from({ length: 32 }, (_, i) => `<i style="--i:${i}"></i>`).join("");
-  reel.style.setProperty("--rdur", RDUR + "ms");
-  dots.innerHTML = scenes.map(sc => `<button type="button" aria-label="${sc.dataset.label}"><span></span></button>`).join("");
-  if (RM) reel.classList.add("still");
-  function countIn(sc) {
-    sc.querySelectorAll(".rc").forEach(el => {
-      const to = +el.dataset.to, dec = +(el.dataset.dec || 0), sep = el.dataset.sep;
-      const fmt = v => sep ? Math.round(v).toLocaleString("en-US") : v.toFixed(dec);
-      if (RM) { el.textContent = fmt(to); return; }
-      const t0 = performance.now(), D = 1200;
-      const step = t => { const p = Math.min(1, (t - t0) / D); el.textContent = fmt(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
-      el.textContent = fmt(0); requestAnimationFrame(step);
-    });
-  }
-  function arm() {
-    clearTimeout(timer); timer = null;
-    if (playing && !hover) { startedAt = performance.now(); timer = setTimeout(() => go((at + 1) % scenes.length), left); }
-  }
-  function go(i) {
-    at = i; left = RDUR;
-    scenes.forEach(sc => sc.classList.remove("on"));
-    void reel.offsetWidth;
-    scenes[i].classList.add("on");
-    [...dots.children].forEach((b, j) => { b.classList.remove("on"); b.classList.toggle("done", j < i); b.setAttribute("aria-current", j === i ? "true" : "false"); });
-    void dots.offsetWidth;
-    dots.children[i].classList.add("on");
-    countIn(scenes[i]);
-    arm();
-  }
-  function hold() {
-    if (timer) { clearTimeout(timer); timer = null; left = Math.max(300, left - (performance.now() - startedAt)); }
-    reel.classList.add("paused");
-  }
-  function setPlay(p) {
-    playing = p;
-    pp.textContent = p ? "❚❚" : "▶"; pp.setAttribute("aria-label", p ? "Pause highlights" : "Play highlights");
-    reel.classList.remove("still");
-    if (p) { reel.classList.remove("paused"); arm(); } else hold();
-  }
-  pp.addEventListener("click", () => setPlay(!playing));
-  dots.addEventListener("click", e => {
-    const b = e.target.closest("button"); if (!b) return;
-    reel.classList.remove("paused"); go([...dots.children].indexOf(b)); if (!playing) hold();
-  });
-  reel.addEventListener("mouseenter", () => { hover = true; if (playing) hold(); });
-  reel.addEventListener("mouseleave", () => { hover = false; if (playing) { reel.classList.remove("paused"); arm(); } });
-  if (RM) { pp.textContent = "▶"; pp.setAttribute("aria-label", "Play highlights"); }
-  go(0);
-})();
 
 /* ---------- 1. inspections chart ---------- */
 const INSP = [
@@ -1073,6 +856,414 @@ const SMAX = 304, STOT = SAVE.reduce((s, r) => s + r[2], 0);
 document.getElementById("sv").innerHTML = SAVE.map(([a, b, h], i) =>
   `<div class="lab">${a}<small>${b}</small></div><div class="tr" data-tip="${esc(a + ": about " + h + " hours a year")}"><div style="width:${h / SMAX * 100}%;transition-delay:${i * 90}ms"></div></div><div class="val">${h} h</div>`).join("")
   + `<div class="lab total">Total</div><div class="tr" style="visibility:hidden"></div><div class="val total">${STOT} h</div>`;
+
+/* ---------- intro film ---------- */
+(function () {
+  const film = document.getElementById("film"), svg = document.getElementById("film-svg");
+  const C = { bg: "#0c1220", ink: "#f4f6fb", dim: "#9aa6bd", blue: "#3987e5", blue2: "#86b6ef", orange: "#eb6834",
+              green: "#1baf7a", gray: "#5d6680", panel: "#162135", line: "#2a3650", screen: "#0f2a4a" };
+  const defs = []; let clipN = 0;
+  const at = o => o.at != null ? ` data-at="${o.at}"` : "";
+  function T(x, y, txt, size, o = {}) {
+    return `<text x="${x}" y="${y}" font-size="${size}" font-weight="${o.w || 600}" fill="${o.fill || C.ink}" text-anchor="${o.a || "start"}"`
+      + (o.ls ? ` letter-spacing="${o.ls}"` : "") + (o.id ? ` id="${o.id}"` : "") + (o.cls ? ` class="${o.cls}"` : "") + at(o) + `>${txt}</text>`;
+  }
+  // text that rises into place from behind an invisible edge
+  function R(x, y, txt, size, o = {}) {
+    const id = "fc" + clipN++;
+    defs.push(`<clipPath id="${id}" clipPathUnits="userSpaceOnUse"><rect x="0" y="${y - size * 1.05}" width="1280" height="${size * 1.4}"/></clipPath>`);
+    return `<g clip-path="url(#${id})">${T(x, y, txt, size, { ...o, cls: "rise" })}</g>`;
+  }
+  function P(x, y, w, h, txt, size, o = {}) {
+    return `<g class="${o.cls != null ? o.cls : "pop"}"${o.id ? ` id="${o.id}"` : ""}${at(o)}><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}" fill="${o.fill || C.panel}" stroke="${o.stroke || C.line}" stroke-width="2"/>`
+      + T(x + w / 2, y + h / 2 + size * 0.36, txt, size, { a: "middle", fill: o.color || C.ink, w: o.w || 600 }) + `</g>`;
+  }
+  const tag = (txt, col, a = "start", x = 80) => T(x, 108, txt, 30, { fill: col, w: 700, ls: 4, cls: "fade", at: 0.1, a });
+
+  /* 1 · title */
+  const s1 = `<g id="f1" class="sc">
+    <text id="f1-year" x="640" y="262" font-size="200" font-weight="800" text-anchor="middle" fill="${C.blue}" fill-opacity="0" stroke="${C.blue}" stroke-width="3" stroke-dasharray="1600" stroke-dashoffset="1600">2026</text>
+    ${R(640, 430, "Hari Vardan", 120, { a: "middle", w: 800, at: 0.5 })}
+    <rect id="f1-bar" x="530" y="466" width="220" height="8" rx="4" fill="${C.blue}"/>
+    ${R(640, 540, "Room inspector · BGV Housekeeping", 42, { a: "middle", fill: C.dim, w: 500, at: 1.2 })}
+  </g>`;
+  const s1b = `<g id="f1b" class="sc">
+    ${R(640, 290, "This year,", 104, { a: "middle", w: 800, at: 0.1 })}
+    ${R(640, 410, "two kinds of work.", 96, { a: "middle", w: 800, fill: C.blue, at: 0.45 })}
+    ${P(110, 482, 500, 84, "Inspecting rooms", 32, { id: "f1b-p1", cls: "" })}
+    ${P(670, 482, 500, 84, "Building tools for the team", 30, { id: "f1b-p2", cls: "", stroke: C.blue })}
+  </g>`;
+
+  /* 2 · the inspector */
+  const rate = r => r.rooms / r.days;
+  const ranked = INSP.slice().sort((a, b) => rate(b) - rate(a));
+  const peers = INSP.filter(r => !r.me);
+  const avg = peers.reduce((t, r) => t + r.rooms, 0) / peers.reduce((t, r) => t + r.days, 0);
+  const bx = 640, bu = 540 / 11, by = 230, bs = 36, bh = 24, ax = bx + avg * bu;
+  const s2 = `<g id="f2" class="sc">
+    ${tag("THE DAY JOB", C.blue)}
+    ${R(80, 172, "Checks every room before a guest gets it", 50, { w: 750, at: 0.2 })}
+    <text id="f2-count" x="80" y="400" font-size="150" font-weight="800" fill="${C.blue}">0</text>
+    ${T(84, 456, "rooms inspected, Jan – Oct", 40, { fill: C.dim, w: 500, cls: "fade", at: 0.8 })}
+        ${T(626, by + 20, "Hari", 30, { a: "end", w: 700, cls: "fade", at: 2.0 })}
+    ${ranked.map((r, i) => `<rect class="f2-bar${r.me ? " me" : ""}" x="${bx}" y="${by + i * bs}" width="${(rate(r) * bu).toFixed(1)}" height="${bh}" rx="5" fill="${r.me ? C.blue : C.gray}"/>`).join("")}
+    <g id="f2-avg"><line x1="${ax.toFixed(1)}" x2="${ax.toFixed(1)}" y1="${by - 8}" y2="${by + 10 * bs + bh + 8}" stroke="${C.dim}" stroke-width="2" stroke-dasharray="6 6"/>
+      ${T((ax - 10).toFixed(1), by - 16, "Team average " + avg.toFixed(1), 28, { a: "end", fill: C.dim, w: 500 })}</g>
+    ${P(640, 632, 560, 62, "Hari: " + rate(ranked[0]).toFixed(1) + " rooms per inspection day", 32, { stroke: C.blue, color: C.blue2, w: 700, at: 3.2 })}
+  </g>`;
+
+  /* 3 · before the app */
+  function doc(cx, kind) {
+    const x = cx - 80, y = 250;
+    let inner = "";
+    if (kind === 0) inner = [110, 90, 116, 70, 100].map((w, i) => `<rect x="${x + 22}" y="${y + 56 + i * 26}" width="${w}" height="10" rx="5" fill="${C.line}"/>`).join("");
+    if (kind === 1) for (let i = 0; i < 5; i++) for (let j = 0; j < 3; j++) inner += `<rect x="${x + 18 + j * 40}" y="${y + 50 + i * 28}" width="34" height="18" rx="3" fill="${C.line}"/>`;
+    if (kind === 2) inner = `<rect x="${x + 16}" y="${y + 48}" width="128" height="132" rx="8" fill="${C.screen}"/>` + [96, 70, 88, 60].map((w, i) => `<rect x="${x + 30}" y="${y + 66 + i * 28}" width="${w}" height="10" rx="5" fill="${C.blue}" opacity=".75"/>`).join("");
+    return `<g class="f3-doc"><path d="M${x},${y} h120 l40,40 v160 h-160 z" fill="${C.panel}" stroke="${C.line}" stroke-width="3" stroke-linejoin="round"/><path d="M${x + 120},${y} v40 h40" fill="none" stroke="${C.line}" stroke-width="3" stroke-linejoin="round"/>${inner}</g>`;
+  }
+  const arrow = x => `<path class="f3-arr" d="M${x},350 H${x + 176} M${x + 162},338 L${x + 178},350 L${x + 162},362" fill="none" stroke="${C.dim}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const s3 = `<g id="f3" class="sc">
+    ${tag("BEFORE THE APP", C.orange)}
+    ${R(80, 172, "Every morning, by hand", 56, { w: 750, at: 0.2 })}
+    <text id="f3-min" x="1200" y="172" font-size="72" font-weight="800" fill="${C.orange}" text-anchor="end">0 min</text>
+    ${T(1200, 212, "every day", 28, { a: "end", fill: C.dim, w: 500, cls: "fade", at: 1.2 })}
+    ${doc(250, 0)}${doc(640, 1)}${doc(1030, 2)}
+    ${T(250, 500, "Hotel report", 36, { a: "middle", cls: "fade", at: 0.9 })}
+    ${T(640, 500, "Spreadsheet", 36, { a: "middle", cls: "fade", at: 1.1 })}
+    ${T(1030, 500, "HotSOS", 36, { a: "middle", cls: "fade", at: 1.3 })}
+    ${arrow(352)}${arrow(742)}
+    ${[0, 1, 2, 3, 4, 5].map(i => `<rect class="f3-bit" x="${i < 3 ? 352 : 742}" y="336" width="22" height="28" rx="3" fill="${C.ink}" opacity="0"/>`).join("")}
+    ${R(640, 600, "The same information, copied by hand.", 44, { a: "middle", w: 650, at: 3.6 })}
+    ${R(640, 664, "Every single day.", 44, { a: "middle", w: 750, fill: C.orange, at: 4.3 })}
+  </g>`;
+
+  /* 4 · the builder */
+  const code = [[0, 220, C.blue], [1, 300, C.ink], [1, 240, C.dim], [2, 180, C.green], [2, 260, C.dim], [1, 140, C.orange],
+                [0, 90, C.blue], [0, 250, C.blue], [1, 320, C.dim], [2, 200, C.green], [2, 150, C.dim], [1, 110, C.orange]];
+  const s4 = `<g id="f4" class="sc">
+    ${tag("ON THE SIDE", C.blue)}
+    ${R(80, 172, "So Hari started building a tool", 56, { w: 750, at: 0.2 })}
+    <g class="pop" data-at="0.4"><rect x="80" y="220" width="620" height="440" rx="18" fill="${C.panel}" stroke="${C.line}" stroke-width="2"/>
+      <circle cx="110" cy="246" r="7" fill="${C.orange}"/><circle cx="134" cy="246" r="7" fill="#eda100"/><circle cx="158" cy="246" r="7" fill="${C.green}"/>
+      <line x1="80" y1="266" x2="700" y2="266" stroke="${C.line}" stroke-width="2"/></g>
+    ${code.map(([ind, w, c], i) => `<rect class="f4-line" x="${112 + ind * 30}" y="${286 + i * 28}" width="${w}" height="12" rx="6" fill="${c}" opacity="${c === C.dim ? 0.55 : 0.9}"/>`).join("")}
+    <rect id="f4-cursor" x="258" y="${286 + 11 * 28 - 4}" width="4" height="20" fill="${C.ink}"/>
+    <text id="f4-c1" x="760" y="306" font-size="96" font-weight="800" fill="${C.blue}">0</text>
+    ${T(764, 348, "small updates since June", 34, { fill: C.dim, w: 500, cls: "fade", at: 1.0 })}
+    <text id="f4-c2" x="760" y="456" font-size="96" font-weight="800" fill="${C.blue}">0</text>
+    ${T(764, 498, "apps, shaped by feedback", 34, { fill: C.dim, w: 500, cls: "fade", at: 1.6 })}
+    ${P(760, 540, 440, 60, "BGV Scheduler", 32, { stroke: C.blue, at: 3.4 })}
+    ${P(760, 612, 440, 60, "GC8 Budget Tracker", 32, { stroke: C.green, at: 3.7 })}
+  </g>`;
+
+  /* 5 · 5 AM */
+  const src = [["Room list", 300], ["Arrivals", 390], ["Staff schedule", 480]];
+  const phY = [222, 334, 446, 558], roles = ["Housekeeper", "Housekeeper", "Housekeeper", "Inspector"];
+  const stars = Array.from({ length: 26 }, (_, i) => `<circle class="f5-star" cx="${680 + ((i * 397) % 560)}" cy="${28 + ((i * 131) % 170)}" r="${(1.5 + (i % 3) * 0.7).toFixed(1)}" fill="#fff" opacity="0"/>`).join("");
+  const s5 = `<g id="f5" class="sc">
+    ${stars}
+    ${T(80, 150, "5:00 AM", 92, { fill: C.blue, w: 800, cls: "fade", at: 0.1 })}
+    ${T(84, 198, "while everyone is still asleep", 34, { fill: C.dim, w: 500, cls: "fade", at: 0.35 })}
+    ${src.map(([, y], i) => `<path class="f5-in" id="f5-in${i}" d="M330,${y + 32} C430,${y + 32} 430,370 520,370" fill="none" stroke="${C.line}" stroke-width="3"/>`).join("")}
+    ${phY.map((y, i) => `<path class="f5-out" id="f5-out${i}" d="M740,370 C805,370 805,${y + 45} 870,${y + 45}" fill="none" stroke="${C.line}" stroke-width="3"/>`).join("")}
+    ${src.map(([t, y]) => P(80, y, 250, 64, t, 30, { cls: "f5-src" })).join("")}
+    <g class="pop" data-at="0.9">
+      <rect x="520" y="300" width="220" height="140" rx="14" fill="${C.panel}" stroke="${C.blue}" stroke-width="3"/>
+      <rect id="f5-screen" x="534" y="314" width="192" height="112" rx="8" fill="${C.screen}"/>
+      ${[150, 110, 130].map((w, i) => `<rect class="f5-build" x="552" y="${336 + i * 28}" width="${w}" height="12" rx="6" fill="${C.blue}"/>`).join("")}
+      <rect x="610" y="440" width="40" height="26" fill="${C.line}"/><rect x="570" y="466" width="120" height="10" rx="5" fill="${C.line}"/>
+    </g>
+    ${T(630, 512, "Office PC", 32, { a: "middle", w: 700, cls: "fade", at: 1.0 })}
+    ${phY.map((y, i) => `<g class="f5-ph"><rect x="870" y="${y}" width="56" height="90" rx="10" fill="${C.panel}" stroke="${C.line}" stroke-width="2"/>
+        <rect class="f5-scr" x="876" y="${y + 10}" width="44" height="70" rx="5" fill="${C.screen}"/>
+        ${[32, 24, 28].map((w, j) => `<rect class="f5-l" x="882" y="${y + 24 + j * 16}" width="${w}" height="7" rx="3.5" fill="#fff"/>`).join("")}</g>
+      <g class="f5-role">${T(950, y + 40, roles[i], 30, { w: 600 })}${T(950, y + 74, "room list ready", 24, { fill: C.dim, w: 500 })}</g>
+      <g class="f5-ok"><circle cx="1180" cy="${y + 34}" r="18" fill="${C.green}"/><path d="M1171,${y + 34} l6,6 l12,-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>`).join("")}
+    ${[0, 1, 2, 3, 4, 5, 6].map(i => `<circle class="f5-dot" id="f5-d${i}" r="7" fill="${C.blue2}" opacity="0"/>`).join("")}
+    ${R(640, 700, "Every list built by the rules, before anyone arrives.", 34, { a: "middle", w: 600, at: 5.4 })}
+  </g>`;
+
+  /* 6 · 7 AM */
+  let sq = "";
+  for (let r = 0; r < 5; r++) for (let c = 0; c < 10; c++) sq += `<rect class="f6-sq" x="${495 + c * 46}" y="${305 + r * 46}" width="38" height="38" rx="6" fill="${C.line}"/>`;
+  const s6 = `<g id="f6" class="sc">
+    ${T(80, 150, "7:00 AM", 92, { fill: C.blue, w: 800, cls: "fade", at: 0.1 })}
+    ${T(84, 198, "one press of a button", 34, { fill: C.dim, w: 500, cls: "fade", at: 0.35 })}
+    <g id="f6-phone"><rect x="110" y="240" width="230" height="430" rx="36" fill="${C.panel}" stroke="${C.line}" stroke-width="3"/>
+      <rect x="195" y="258" width="60" height="8" rx="4" fill="${C.line}"/>
+      ${[170, 130, 160, 120, 150].map((w, i) => `<rect x="140" y="${300 + i * 40}" width="${w}" height="14" rx="7" fill="${C.line}"/>`).join("")}
+      <rect id="f6-btn" x="140" y="580" width="170" height="64" rx="16" fill="${C.blue}"/>
+      <text id="f6-t1" x="225" y="622" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">Push</text>
+      <text id="f6-t2" x="225" y="622" font-size="30" font-weight="700" fill="#fff" text-anchor="middle" opacity="0">Sent ✓</text>
+      <circle id="f6-rip" cx="225" cy="612" r="24" fill="none" stroke="#fff" stroke-width="4" opacity="0"/></g>
+    <path id="f6-arr" d="M350,560 C410,560 420,400 466,400" fill="none" stroke="${C.blue}" stroke-width="3" stroke-dasharray="8 8" opacity="0"/>
+    <circle id="f6-dot" r="8" fill="${C.blue2}" opacity="0"/>
+    <g class="pop" data-at="0.5"><rect x="470" y="240" width="500" height="300" rx="18" fill="${C.panel}" stroke="${C.blue}" stroke-width="2"/>${T(495, 285, "HotSOS", 30, { w: 700 })}</g>
+    ${sq}
+    <g class="pop" data-at="0.7"><rect x="470" y="560" width="500" height="110" rx="18" fill="${C.panel}" stroke="${C.line}" stroke-width="2"/>${T(495, 598, "Engineering sheet", 28, { w: 700 })}</g>
+    ${[440, 360].map((w, i) => `<rect class="f6-row" x="495" y="${616 + i * 24}" width="${w}" height="12" rx="6" fill="${C.green}"/>`).join("")}
+    ${T(1005, 300, "By hand", 30, { fill: C.dim, w: 600, cls: "fade", at: 3.3 })}
+    <text id="f6-was" x="1005" y="372" font-size="64" font-weight="800" fill="${C.dim}">40 min</text>
+    <line id="f6-strike" x1="1000" y1="350" x2="1240" y2="350" stroke="${C.orange}" stroke-width="6" stroke-linecap="round"/>
+    ${T(1005, 470, "Now", 30, { fill: C.blue, w: 600, cls: "fade", at: 4.1 })}
+    <text id="f6-now" x="1005" y="542" font-size="64" font-weight="800" fill="${C.blue}">&lt;1 min</text>
+  </g>`;
+
+  /* 7 · all day */
+  const BX = [90, 480, 870];
+  let wins = "";
+  BX.forEach(x0 => { for (let r = 0; r < 5; r++) for (let c = 0; c < 6; c++) wins += `<rect class="f7-w" x="${x0 + 22 + c * 48}" y="${276 + r * 48}" width="36" height="30" rx="4" fill="${C.line}"/>`; });
+  const sw = (x, col, label) => `<rect x="${x}" y="552" width="24" height="24" rx="5" fill="${col}"/>` + T(x + 34, 573, label, 28, { w: 500 });
+  const s7 = `<g id="f7" class="sc">
+    ${tag("ALL DAY", C.blue)}
+    ${R(80, 172, "One live picture for everyone", 56, { w: 750, at: 0.2 })}
+    ${BX.map((x0, b) => `<g class="pop" data-at="${0.4 + b * 0.12}"><rect x="${x0}" y="252" width="320" height="270" rx="12" fill="${C.panel}" stroke="${C.line}" stroke-width="2"/></g>`
+      + T(x0 + 160, 238, "Building " + (b + 1), 28, { a: "middle", fill: C.dim, w: 600, cls: "fade", at: 0.5 + b * 0.12 })).join("")}
+    ${wins}
+    <g class="fade" data-at="1.2">${sw(90, C.orange, "Being cleaned")}${sw(370, C.blue, "Cleaned")}${sw(560, C.green, "Inspected")}${T(1190, 573, "from HotSOS, every few minutes", 26, { a: "end", fill: C.dim, w: 500 })}</g>
+    ${Array.from({ length: 41 }, (_, i) => `<circle class="f7-a" cx="${(100 + i * 26.8).toFixed(1)}" cy="636" r="10" fill="${i < 28 ? C.blue2 : i < 38 ? C.green : C.ink}"/>`).join("")}
+    ${T(640, 696, "41 colleagues use it: 28 housekeepers, 10 inspectors, 3 managers", 30, { a: "middle", fill: C.dim, w: 500, cls: "fade", at: 3.6 })}
+  </g>`;
+
+  /* 8 · time given */
+  const kindOf = new Map(DAYS.map(d => [d[0], d[1]]));
+  const day0 = new Date("2026-05-25T12:00:00");
+  let cal = "";
+  for (let w = 0; w < 21; w++) for (let r = 0; r < 7; r++) {
+    const iso = new Date(day0.getTime() + (w * 7 + r) * 864e5).toISOString().slice(0, 10), k = kindOf.get(iso);
+    cal += `<rect class="f8-c" x="${80 + w * 32}" y="${230 + r * 32}" width="26" height="26" rx="5" fill="${k === "paid" ? C.gray : k === "work" ? C.blue : k === "off" ? C.orange : C.panel}"/>`;
+  }
+  const tot = sums.paid + sums.work + sums.off, CIRC = 2 * Math.PI * 125;
+  let acc = 0;
+  const arcs = [["work", C.blue], ["off", C.orange], ["paid", C.gray]].map(([k, col]) => {
+    const len = sums[k] / tot * CIRC;
+    const el = `<circle class="f8-arc" data-len="${len.toFixed(1)}" cx="1030" cy="340" r="125" fill="none" stroke="${col}" stroke-width="44" stroke-dasharray="${len.toFixed(1)} ${CIRC.toFixed(1)}" stroke-dashoffset="${(-acc).toFixed(1)}" transform="rotate(-90 1030 340)"/>`;
+    acc += len; return el;
+  }).join("");
+  const own = Math.round((sums.work + sums.off) / tot * 100);
+  const s8 = `<g id="f8" class="sc">
+    ${tag("TIME GIVEN", C.orange)}
+    ${R(80, 172, "Much of it on personal time", 56, { w: 750, at: 0.2 })}
+    ${cal}
+    <g class="fade" data-at="1.4"><rect x="80" y="486" width="24" height="24" rx="5" fill="${C.blue}"/>${T(114, 507, "Around a full shift", 28, { w: 500 })}
+      <rect x="400" y="486" width="24" height="24" rx="5" fill="${C.orange}"/>${T(434, 507, "Day off", 28, { w: 500 })}
+      <rect x="80" y="528" width="24" height="24" rx="5" fill="${C.gray}"/>${T(114, 549, "Scheduled project day", 28, { w: 500 })}</g>
+    <circle cx="1030" cy="340" r="125" fill="none" stroke="${C.panel}" stroke-width="44"/>
+    ${arcs}
+    <text x="1030" y="370" font-size="84" font-weight="800" fill="${C.ink}" text-anchor="middle"><tspan id="f8-pct">0</tspan>%</text>
+    ${T(1030, 520, "personal time", 32, { a: "middle", fill: C.dim, w: 600, cls: "fade", at: 1.6 })}
+    ${R(80, 630, "8 working days were set aside for it.", 42, { w: 650, at: 3.0 })}
+    ${T(80, 684, `${Math.round(tot)} measured hours since May 30: ${Math.round(sums.work)} h around full shifts, ${Math.round(sums.off)} h on days off`, 28, { fill: C.dim, w: 500, cls: "fade", at: 3.5 })}
+  </g>`;
+
+  /* 9 · payoff, 10 · end card */
+  const s9 = `<g id="f9" class="sc">
+    ${tag("FOR THE TEAM", C.green, "middle", 640)}
+    <text id="f9-n" x="640" y="330" font-size="220" font-weight="800" fill="${C.blue}" text-anchor="middle">0</text>
+    ${R(640, 410, "staff hours a year, estimated", 50, { a: "middle", w: 650, at: 0.7 })}
+    ${P(65, 470, 370, 72, "More time on the floor", 28, { stroke: C.green, at: 2.4 })}
+    ${P(455, 470, 370, 72, "$0 a month to run", 28, { stroke: C.blue, at: 2.65 })}
+    ${P(845, 470, 370, 72, "Used across the team", 28, { stroke: C.orange, at: 2.9 })}
+    ${T(640, 620, "A rough estimate, for managers to check", 26, { a: "middle", fill: C.dim, w: 500, cls: "fade", at: 3.3 })}
+  </g>
+  <g id="f10" class="sc">
+    ${R(640, 300, "Hari Vardan", 110, { a: "middle", w: 800, at: 0.2 })}
+    ${R(640, 385, "Room inspector, BGV Housekeeping", 46, { a: "middle", w: 600, fill: C.dim, at: 0.7 })}
+    ${R(640, 445, "Built to make the team's day a little easier.", 46, { a: "middle", w: 600, fill: C.blue, at: 1.0 })}
+    <g id="f10-scroll">${T(640, 560, "Scroll down for the details", 30, { a: "middle", fill: C.dim, w: 500 })}<path d="M626,584 l14,14 l14,-14" fill="none" stroke="${C.dim}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>`;
+
+  svg.innerHTML = `<defs>${defs.join("")}
+      <pattern id="fgrid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#1a2538"/></pattern>
+      <radialGradient id="fglow"><stop offset="0" stop-color="${C.blue}" stop-opacity=".26"/><stop offset="1" stop-color="${C.blue}" stop-opacity="0"/></radialGradient></defs>
+    <rect width="1280" height="720" fill="${C.bg}"/><rect width="1280" height="720" fill="url(#fgrid)"/>
+    <circle id="f-glow" cx="640" cy="330" r="560" fill="url(#fglow)"/>
+    <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif">${s1}${s1b}${s2}${s3}${s4}${s5}${s6}${s7}${s8}${s9}</g>`;
+
+  if (!window.gsap) {                       // no animation library: show the closing card as a still
+    svg.querySelector("#f10").style.visibility = "visible";
+    film.classList.add("nogsap");
+    return;
+  }
+
+  /* ---------- the timeline ---------- */
+  const q = sel => svg.querySelector(sel), qa = (sel, root = svg) => [...root.querySelectorAll(sel)];
+  const tl = gsap.timeline({ paused: true });
+  function scene(id, t0, t1, glow) {
+    const el = q("#" + id);
+    tl.fromTo(el, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.45, ease: "power1.out" }, t0);
+    if (t1 != null) tl.to(el, { autoAlpha: 0, duration: 0.45, ease: "power1.in" }, t1 - 0.45);
+    if (glow) tl.to("#f-glow", { attr: { cx: glow[0], cy: glow[1] }, duration: 1.4, ease: "power2.inOut" }, t0);
+    qa(".rise", el).forEach((e, i) => tl.fromTo(e, { y: +e.getAttribute("font-size") * 1.25 },
+      { y: 0, duration: 0.75, ease: "power3.out" }, t0 + (e.dataset.at != null ? +e.dataset.at : 0.15 + i * 0.14)));
+    qa(".fade", el).forEach((e, i) => tl.fromTo(e, { opacity: 0 },
+      { opacity: 1, duration: 0.6 }, t0 + (e.dataset.at != null ? +e.dataset.at : 0.3 + i * 0.12)));
+    qa(".pop", el).forEach((e, i) => tl.fromTo(e, { opacity: 0, scale: 0.85, transformOrigin: "50% 50%" },
+      { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, t0 + (e.dataset.at != null ? +e.dataset.at : 0.3 + i * 0.12)));
+    return el;
+  }
+  function count(el, to, t, dur, fmt) {
+    const o = { v: 0 };
+    tl.fromTo(o, { v: 0 }, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+  }
+  function flow(pathEl, dot, t, dur, reps) {
+    const len = pathEl.getTotalLength(), o = { v: 0 };
+    const place = () => { const pt = pathEl.getPointAtLength(o.v * len); dot.setAttribute("cx", pt.x); dot.setAttribute("cy", pt.y); };
+    place();
+    tl.fromTo(o, { v: 0 }, { v: 1, duration: dur, ease: "none", repeat: reps, onUpdate: place }, t);
+    tl.fromTo(dot, { opacity: 0 }, { opacity: 1, duration: 0.15 }, t);
+    tl.to(dot, { opacity: 0, duration: 0.15 }, t + dur * (reps + 1) - 0.15);
+  }
+  const n0 = v => Math.round(v).toLocaleString("en-US");
+
+  // 1 · title (0 – 3.6)
+  scene("f1", 0, 3.6, [640, 330]);
+  tl.to("#f1-year", { attr: { "stroke-dashoffset": 0 }, duration: 1.8, ease: "power2.inOut" }, 0.1);
+  tl.to("#f1-year", { attr: { "fill-opacity": 0.14 }, duration: 0.8 }, 1.4);
+  tl.fromTo("#f1-bar", { scaleX: 0, transformOrigin: "50% 50%" }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, 1.0);
+  tl.to("#f1", { y: -30, duration: 0.45, ease: "power1.in" }, 3.15);
+  // 1b · one year, two jobs (3.6 – 6.6)
+  scene("f1b", 3.6, 6.6, [640, 380]);
+  tl.fromTo("#f1b-p1", { x: -80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 4.6);
+  tl.fromTo("#f1b-p2", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 4.85);
+
+  // 2 · inspector (6.6 – 14.0)
+  scene("f2", 6.6, 14.0, [320, 360]);
+  count(q("#f2-count"), 1124, 7.2, 2.2, n0);
+  tl.fromTo(qa(".f2-bar"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.1, ease: "power3.out", stagger: { each: 0.07, from: "end" } }, 7.6);
+  tl.fromTo("#f2-avg", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 8.8);
+
+  // 3 · before (14.0 – 21.0)
+  scene("f3", 14.0, 21.0, [640, 380]);
+  tl.fromTo(qa(".f3-doc"), { opacity: 0, scale: 0.8, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)", stagger: 0.2 }, 14.5);
+  tl.fromTo(qa(".f3-arr"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.2 }, 15.2);
+  qa(".f3-bit").forEach((b, i) => tl.to(b, { keyframes: { x: [0, 154], opacity: [0, 1, 1, 0] }, duration: 0.9, ease: "power1.inOut", repeat: 4 }, 15.5 + (i % 3) * 0.3));
+  count(q("#f3-min"), 100, 15.2, 4.2, v => Math.round(v) + " min");
+
+  // 4 · builder (21.0 – 27.8)
+  scene("f4", 21.0, 27.8, [400, 420]);
+  tl.fromTo(qa(".f4-line"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.3, ease: "power2.out", stagger: 0.16 }, 21.6);
+  tl.fromTo("#f4-cursor", { opacity: 0 }, { opacity: 1, duration: 0.01, yoyo: true, repeat: 11, repeatDelay: 0.32 }, 21.6);
+  count(q("#f4-c1"), 366, 22.0, 2.0, n0);
+  count(q("#f4-c2"), 2, 22.6, 0.8, n0);
+
+  // 5 · 5 AM (27.8 – 35.6)
+  scene("f5", 27.8, 35.6, [630, 370]);
+  tl.fromTo(qa(".f5-star"), { opacity: 0 }, { opacity: 0.8, duration: 0.6, stagger: { each: 0.04, from: "random" } }, 28.0);
+  tl.to(qa(".f5-star"), { opacity: 0.25, duration: 0.8, yoyo: true, repeat: 5, stagger: { each: 0.08, from: "random" } }, 29.2);
+  tl.fromTo(qa(".f5-src"), { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out", stagger: 0.15 }, 28.4);
+  tl.fromTo(qa(".f5-in"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.1 }, 28.8);
+  tl.fromTo(qa(".f5-ph"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.1 }, 29.2);
+  [0, 1, 2].forEach(i => flow(q("#f5-in" + i), q("#f5-d" + i), 29.1 + i * 0.15, 1.0, 2));
+  tl.fromTo(qa(".f5-build"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, stagger: 0.25 }, 29.8);
+  tl.to("#f5-screen", { fill: "#174a80", duration: 0.35, yoyo: true, repeat: 3 }, 29.8);
+  tl.fromTo(qa(".f5-out"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.1 }, 30.6);
+  [0, 1, 2, 3].forEach(i => flow(q("#f5-out" + i), q("#f5-d" + (3 + i)), 30.8 + i * 0.25, 0.9, 1));
+  tl.to(qa(".f5-scr"), { fill: C.blue, duration: 0.3, stagger: 0.3 }, 31.6);
+  tl.fromTo(qa(".f5-l"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.25, stagger: 0.08 }, 31.7);
+  tl.fromTo(qa(".f5-role"), { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.3 }, 31.7);
+  tl.fromTo(qa(".f5-ok"), { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.3 }, 32.0);
+
+  // 6 · 7 AM (35.6 – 42.0)
+  scene("f6", 35.6, 42.0, [720, 420]);
+  tl.fromTo("#f6-phone", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 35.8);
+  tl.to("#f6-btn", { scale: 0.92, transformOrigin: "50% 50%", duration: 0.12, yoyo: true, repeat: 1 }, 36.9);
+  tl.fromTo("#f6-rip", { attr: { r: 24 }, opacity: 0.9 }, { attr: { r: 120 }, opacity: 0, duration: 0.7, ease: "power2.out" }, 36.9);
+  tl.to("#f6-t1", { opacity: 0, duration: 0.15 }, 37.05);
+  tl.to("#f6-t2", { opacity: 1, duration: 0.15 }, 37.1);
+  tl.to("#f6-btn", { fill: C.green, duration: 0.3 }, 37.1);
+  tl.fromTo("#f6-arr", { opacity: 0 }, { opacity: 0.7, duration: 0.3 }, 37.0);
+  flow(q("#f6-arr"), q("#f6-dot"), 37.1, 0.7, 2);
+  tl.to(qa(".f6-sq"), { fill: C.blue, duration: 0.18, stagger: { each: 0.025, grid: [5, 10], from: "start" } }, 37.5);
+  tl.fromTo(qa(".f6-row"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, stagger: 0.2 }, 38.6);
+  tl.fromTo("#f6-was", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 38.9);
+  tl.fromTo("#f6-strike", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 39.4);
+  tl.fromTo("#f6-now", { opacity: 0, scale: 0.8, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 39.8);
+
+  // 7 · all day (42.0 – 48.0)
+  scene("f7", 42.0, 48.0, [640, 400]);
+  let seed = 11;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  qa(".f7-w").forEach(w => {
+    const a = 43.0 + rnd() * 2.4;
+    tl.to(w, { fill: C.orange, duration: 0.2 }, a);
+    tl.to(w, { fill: C.blue, duration: 0.2 }, a + 0.5 + rnd() * 0.4);
+    if (rnd() < 0.75) tl.to(w, { fill: C.green, duration: 0.2 }, a + 1.3 + rnd() * 0.8);
+  });
+  tl.fromTo(qa(".f7-a"), { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.03 }, 44.6);
+
+  // 8 · time given (48.0 – 54.4)
+  scene("f8", 48.0, 54.4, [1000, 340]);
+  tl.fromTo(qa(".f8-c"), { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.006 }, 48.6);
+  qa(".f8-arc").forEach((a, i) => {
+    const len = +a.dataset.len;
+    tl.fromTo(a, { attr: { "stroke-dasharray": `0 ${CIRC.toFixed(1)}` } }, { attr: { "stroke-dasharray": `${len} ${CIRC.toFixed(1)}` }, duration: [0.9, 0.5, 0.6][i], ease: "power1.inOut" }, [49.3, 50.2, 50.7][i]);
+  });
+  count(q("#f8-pct"), own, 49.3, 1.4, v => Math.round(v));
+
+  // 9 · payoff (54.4 – 60.2), 10 · end card (60.2 – )
+  scene("f9", 54.4, 60.2, [640, 330]);
+  count(q("#f9-n"), 889, 54.7, 2.2, n0);
+  scene("f10", 60.2, null, [640, 360]);
+  tl.fromTo("#f10-scroll", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 61.8);
+  tl.to("#f10-scroll", { y: 8, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut" }, 62.3);
+
+  /* ---------- player ---------- */
+  const D = tl.duration();
+  const playBtn = document.getElementById("f-play"), big = document.getElementById("f-big"), track = document.getElementById("f-track");
+  const fillEl = document.getElementById("f-fill"), knob = document.getElementById("f-knob"), timeEl = document.getElementById("f-time");
+  const chapEl = document.getElementById("f-chap"), fullBtn = document.getElementById("f-full");
+  const CH = [["Intro", 0], ["The day job", 6.6], ["Before the app", 14], ["On the side", 21], ["5 AM", 27.8], ["7 AM", 35.6], ["All day", 42], ["Time given", 48], ["For the team", 54.4]];
+  track.insertAdjacentHTML("beforeend", CH.slice(1).map(c => `<i class="f-tick" style="left:${(c[1] / D * 100).toFixed(2)}%"></i>`).join(""));
+  const ICON = {
+    play: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>',
+    pause: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>',
+    replay: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z" fill="currentColor"/></svg>' };
+  const mmss = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+  const ended = () => tl.time() >= D - 0.01;
+  let lastIcon = "";
+  function ui() {
+    const t = tl.time(), pc = t / D * 100;
+    fillEl.style.width = pc + "%"; knob.style.left = pc + "%";
+    track.setAttribute("aria-valuenow", Math.round(pc));
+    timeEl.textContent = `${mmss(t)} / ${mmss(D)}`;
+    let c = CH[0][0]; CH.forEach(([n, s0]) => { if (t >= s0) c = n; }); chapEl.textContent = c;
+    const playing = !tl.paused() && !ended();
+    film.classList.toggle("playing", playing);
+    film.classList.toggle("fresh", !playing && t < 0.05);
+    const icon = playing ? "pause" : ended() ? "replay" : "play";
+    if (icon !== lastIcon) { playBtn.innerHTML = ICON[icon]; playBtn.setAttribute("aria-label", icon === "pause" ? "Pause" : icon === "replay" ? "Replay" : "Play"); lastIcon = icon; }
+  }
+  tl.eventCallback("onUpdate", ui);
+  tl.eventCallback("onComplete", ui);
+  let userPaused = false;
+  function play() { if (ended()) tl.restart(); else tl.play(); userPaused = false; ui(); }
+  playBtn.addEventListener("click", () => { if (!tl.paused() && !ended()) { tl.pause(); userPaused = true; ui(); } else play(); });
+  big.addEventListener("click", play);
+  let dragging = false;
+  const seek = e => { const r = track.getBoundingClientRect(); tl.time(Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * D); ui(); };
+  track.addEventListener("pointerdown", e => { dragging = true; track.setPointerCapture(e.pointerId); seek(e); });
+  track.addEventListener("pointermove", e => { if (dragging) seek(e); });
+  track.addEventListener("pointerup", () => { dragging = false; });
+  track.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") { tl.time(Math.min(D, Math.max(0, tl.time() + (e.key === "ArrowRight" ? 5 : -5)))); ui(); e.preventDefault(); }
+  });
+  fullBtn.addEventListener("click", () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (film.requestFullscreen) film.requestFullscreen();
+    else if (film.webkitRequestFullscreen) film.webkitRequestFullscreen();
+  });
+  // play while on screen, pause when scrolled away
+  const seen = new IntersectionObserver(es => es.forEach(e => {
+    if (e.intersectionRatio >= 0.45) { if (!RM && !userPaused && !ended()) tl.play(); }
+    else if (!tl.paused()) tl.pause();
+    ui();
+  }), { threshold: [0, 0.45, 0.7] });
+  if (RM) tl.time(D);                       // reduced motion: rest on the closing card; Play still runs it
+  ui();
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => seen.observe(film));
+  window.__film = tl;
+})();
 
 /* ---------- nav highlight ---------- */
 const links = [...document.querySelectorAll("nav.jump a")];
