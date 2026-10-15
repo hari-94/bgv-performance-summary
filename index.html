@@ -54,12 +54,105 @@ strong{font-weight:650}
 .hero h1{font-size:clamp(34px,6vw,52px);font-weight:800}
 .role{font-size:18px;color:var(--text-2);margin:6px 0 18px}
 .lead{font-size:clamp(18px,2.4vw,21px);max-width:760px;line-height:1.5}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
 .tile .n{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
 .tile .l{font-weight:600;margin-top:6px;line-height:1.35}
 .tile .d{font-size:13.5px;color:var(--text-2);margin-top:6px;line-height:1.45}
 .tile.accent .n{color:var(--c1)}
+
+
+/* hero reel */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,450px);gap:36px;align-items:center}
+.reel{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px 20px 10px}
+.reel-stage{position:relative;height:318px}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+.scene.on{opacity:1;visibility:visible;transition:opacity .45s ease}
+.sc-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c1)}
+.sc-h{font-size:20px;font-weight:750;line-height:1.25;margin:4px 0 14px;letter-spacing:-.01em}
+.sc-cap{font-size:14px;color:var(--text-2);line-height:1.45;margin-top:auto}
+.scene.on .sc-h{animation:rise .5s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.96)}}
+@keyframes growx{from{transform:scaleX(0)}}
+.ra{display:grid;gap:10px;margin-bottom:14px}
+.ra-row{display:grid;grid-template-columns:108px minmax(0,1fr) 44px;white-space:nowrap;align-items:center;gap:10px;font-size:14px;color:var(--text-2)}
+.ra-row.me{color:var(--text);font-weight:700}
+.ra-t{height:26px;background:var(--empty);border-radius:6px;overflow:hidden}
+.ra-b{height:100%;background:var(--peer);border-radius:0 6px 6px 0;transform-origin:left center}
+.ra-row.me .ra-b{background:var(--c1)}
+.scene.on .ra-b{animation:growx 1.1s cubic-bezier(.2,.7,.2,1) both}
+.scene.on .ra-row:nth-child(2) .ra-b{animation-delay:.25s}
+.ra-v{text-align:right;font-variant-numeric:tabular-nums;font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;font-weight:600;background:var(--soft);color:var(--c1);border-radius:999px;padding:4px 10px}
+.scene.on .chips span{animation:pop .4s ease both;animation-delay:calc(1.1s + var(--i) * .18s)}
+.flow-mini{width:100%;height:auto;display:block;margin-bottom:8px}
+.fm-p{fill:none;stroke:var(--c1);stroke-width:2;stroke-dasharray:1 1;opacity:.7}
+.scene.on .fm-p{animation:draw .9s ease both}
+@keyframes draw{from{stroke-dashoffset:1}}
+.fm-n rect{fill:var(--surface);stroke:var(--line-2);stroke-width:1.2}
+.fm-n.core rect{fill:var(--soft);stroke:var(--c1);stroke-width:1.6}
+.fm-n.out rect{stroke:var(--c1)}
+.fm-n text{font:600 13px Inter,system-ui,sans-serif;fill:var(--text);text-anchor:middle}
+.fm-n text.s{font-weight:400;font-size:11px;fill:var(--text-2)}
+.fm-d circle,.push-arrow circle{fill:var(--c1);stroke:var(--surface);stroke-width:2}
+.scene.on .fm-d{animation:pop .3s ease .7s both}
+.push-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.phone{flex:0 0 78px;height:124px;border:2px solid var(--line-2);border-radius:14px;padding:12px 9px 9px;display:flex;flex-direction:column;gap:6px;background:var(--surface)}
+.ph-top{width:24px;height:4px;border-radius:2px;background:var(--line-2);margin:0 auto 4px}
+.ph-l{height:6px;border-radius:3px;background:var(--empty)}
+.ph-l.s{width:65%}
+.push{margin-top:auto;height:26px;border-radius:8px;background:var(--c1);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+.push span{grid-area:1/1}
+.push .pa{opacity:0}
+.scene.on .push{animation:press .5s ease .5s both}
+.scene.on .push .pa{animation:holdOn .95s linear}
+.scene.on .push .pb{animation:holdOff .95s linear}
+@keyframes press{50%{transform:scale(.88)}}
+@keyframes holdOn{from,to{opacity:1}}
+@keyframes holdOff{from,to{opacity:0}}
+.push-arrow{flex:0 0 52px;height:20px;overflow:visible}
+.push-arrow path{stroke:var(--c1);stroke-width:2;fill:none}
+.hs{flex:1;min-width:0;border:1.5px solid var(--c1);border-radius:12px;padding:8px 10px 10px;background:var(--surface)}
+.hs-h{font-size:12.5px;font-weight:700;margin-bottom:6px}
+.hs-g{display:grid;grid-template-columns:repeat(8,1fr);gap:3px}
+.hs-g i{aspect-ratio:1;border-radius:3px;background:var(--c1)}
+.scene.on .hs-g i{animation:sq .25s ease both;animation-delay:calc(1s + var(--i) * 28ms)}
+@keyframes sq{from{background:var(--empty);transform:scale(.7)}}
+.times{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;margin-bottom:8px}
+.times .was{color:var(--text-3);text-decoration:line-through}
+.times .now{color:var(--c1);font-weight:700}
+.scene.on .times .now{animation:pop .4s ease 2.2s both}
+.donut-row{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+.donut{flex:0 0 132px;width:132px;height:132px}
+.donut circle{fill:none;stroke-width:16;transform:rotate(-90deg);transform-origin:70px 70px}
+.d-bg{stroke:var(--empty)}
+.scene.on .d-a{animation:arc .8s ease-out both}
+@keyframes arc{from{stroke-dasharray:0 326.7}}
+.d-n{font:800 28px Inter,system-ui,sans-serif;fill:var(--text);text-anchor:middle}
+.d-s{font:500 11px Inter,system-ui,sans-serif;fill:var(--text-2);text-anchor:middle}
+.d-leg{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13.5px;color:var(--text-2);line-height:1.35}
+.d-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.d-leg b{color:var(--text)}
+.scene.on .d-leg li{animation:pop .4s ease both;animation-delay:calc(.4s + var(--i) * .45s)}
+.big{font-size:52px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--c1);margin-bottom:12px;font-variant-numeric:tabular-nums}
+.big small{font-size:16px;font-weight:600;color:var(--text-2);letter-spacing:0}
+.stack{display:flex;gap:2px;height:14px;border-radius:4px;overflow:hidden;margin-bottom:12px}
+.stack i{background:var(--c1)}
+.stack i:nth-child(even){background:color-mix(in srgb,var(--c1) 62%,var(--surface))}
+.scene.on .stack{animation:wipe 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.reel-foot{display:flex;align-items:center;gap:12px;margin-top:8px}
+.reel-pp{flex:0 0 32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:11px;cursor:pointer}
+.reel-dots{display:flex;gap:6px;flex:1}
+.reel-dots button{flex:1;height:24px;border:0;background:none;padding:0;cursor:pointer;position:relative}
+.reel-dots button:before{content:"";position:absolute;left:0;right:0;top:10px;height:4px;border-radius:2px;background:var(--empty)}
+.reel-dots button span{position:absolute;left:0;top:10px;height:4px;border-radius:2px;background:var(--c1);width:0}
+.reel-dots button.done span{width:100%}
+.reel-dots button.on span{animation:fill var(--rdur,6s) linear forwards}
+.reel.paused .reel-dots button.on span{animation-play-state:paused}
+.reel.still .reel-dots button.on span{animation:none;width:100%}
 
 /* nav */
 nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -203,6 +296,7 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
 
 @media (max-width:860px){
   .tiles{grid-template-columns:1fr 1fr}
+  .hero-grid{grid-template-columns:1fr;gap:24px}
   .caption{min-height:200px}
   .mods{grid-template-columns:1fr 1fr}
   .money{grid-template-columns:1fr 1fr}
@@ -217,11 +311,12 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
   .card{padding:16px}
   section{padding-top:44px}
 }
-@media (max-width:400px){ .tiles,.money{grid-template-columns:1fr} }
+@media (max-width:400px){ .tiles,.money{grid-template-columns:1fr} .reel{padding:16px 14px 8px} .reel-stage{height:340px} .sc-h{font-size:18px} .big{font-size:44px} .donut{flex-basis:112px;width:112px;height:112px} }
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
   .grow,.seg,.sv .tr div,.split,.mod,.cal-cell{transition:none!important;transform:none!important;clip-path:none!important;opacity:1!important}
   .caption.swap{animation:none}
+  .reel *{animation:none!important}
 }
 </style>
 </head>
@@ -230,13 +325,107 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">2026 work summary · BGV Housekeeping</div>
-    <h1>Hari Vardan</h1>
-    <div class="role">Room inspector (RQS) · January – October 2026</div>
-    <p class="lead">Hari inspects more rooms per day than anyone else on the full-time inspection team. Alongside that, mostly on personal time, Hari designed and built the software the housekeeping department now uses to plan and run every day.</p>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow">2026 work summary · BGV Housekeeping</div>
+        <h1>Hari Vardan</h1>
+        <div class="role">Room inspector (RQS) · January – October 2026</div>
+        <p class="lead">Hari inspects more rooms per day than anyone else on the full-time inspection team. Alongside that, mostly on personal time, Hari designed and built the software the housekeeping department now uses to plan and run every day.</p>
+      </div>
+
+      <div class="reel" id="reel" aria-roledescription="carousel" aria-label="Highlights">
+        <div class="reel-stage">
+
+          <div class="scene" data-label="The inspector">
+            <div class="sc-k">The inspector</div>
+            <div class="sc-h">Most rooms inspected per day of the 11 full-time inspectors</div>
+            <div class="ra">
+              <div class="ra-row me"><span class="ra-n">Hari</span><div class="ra-t"><div class="ra-b" style="width:96.4%"></div></div><b class="ra-v"><span class="rc" data-to="10.6" data-dec="1">10.6</span></b></div>
+              <div class="ra-row"><span class="ra-n">Team average</span><div class="ra-t"><div class="ra-b" style="width:82.7%"></div></div><b class="ra-v"><span class="rc" data-to="9.1" data-dec="1">9.1</span></b></div>
+            </div>
+            <div class="chips"><span style="--i:0">#1 of 11</span><span style="--i:1">1,124 rooms inspected</span><span style="--i:2">0 last-minute absences</span></div>
+            <div class="sc-cap">Rooms inspected per inspection day, Jan 1 – Oct 14, 2026.</div>
+          </div>
+
+          <div class="scene" data-label="5 AM">
+            <div class="sc-k">5:00 AM · every day</div>
+            <div class="sc-h">Room lists are ready before anyone arrives</div>
+            <svg class="flow-mini" viewBox="0 0 400 150" aria-hidden="true">
+              <path class="fm-p" pathLength="1" id="fm1" d="M112,22 C140,22 140,66 168,70"/>
+              <path class="fm-p" pathLength="1" id="fm2" d="M112,75 C140,75 140,75 168,75"/>
+              <path class="fm-p" pathLength="1" id="fm3" d="M112,128 C140,128 140,84 168,80"/>
+              <path class="fm-p" pathLength="1" id="fm4" d="M262,68 C285,68 285,38 300,38"/>
+              <path class="fm-p" pathLength="1" id="fm5" d="M262,82 C285,82 285,112 300,112"/>
+              <g class="fm-n"><rect x="2" y="6" width="110" height="32" rx="8"/><text x="57" y="27">Room list</text></g>
+              <g class="fm-n"><rect x="2" y="59" width="110" height="32" rx="8"/><text x="57" y="80">Arrivals</text></g>
+              <g class="fm-n"><rect x="2" y="112" width="110" height="32" rx="8"/><text x="57" y="133">Staff schedule</text></g>
+              <g class="fm-n core"><rect x="168" y="48" width="94" height="54" rx="10"/><text x="215" y="72">Office PC</text><text class="s" x="215" y="89">builds the lists</text></g>
+              <g class="fm-n out"><rect x="300" y="18" width="98" height="40" rx="8"/><text x="349" y="35">Phones</text><text class="s" x="349" y="50">each person</text></g>
+              <g class="fm-n out"><rect x="300" y="92" width="98" height="40" rx="8"/><text x="349" y="109">Inspections</text><text class="s" x="349" y="124">today's tab</text></g>
+              <g class="fm-d">
+                <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#fm1"/></animateMotion></circle>
+                <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="-0.6s"><mpath href="#fm2"/></animateMotion></circle>
+                <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="-1.2s"><mpath href="#fm3"/></animateMotion></circle>
+                <circle r="4"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.3s"><mpath href="#fm4"/></animateMotion></circle>
+                <circle r="4"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-1.0s"><mpath href="#fm5"/></animateMotion></circle>
+              </g>
+            </svg>
+            <div class="sc-cap">The office PC reads the hotel's reports and the staff schedule, builds every room list by the department's rules and sends each person's rooms to their phone.</div>
+          </div>
+
+          <div class="scene" data-label="7 AM">
+            <div class="sc-k">7:00 AM</div>
+            <div class="sc-h">One button assigns every room in HotSOS</div>
+            <div class="push-row">
+              <div class="phone"><div class="ph-top"></div><div class="ph-l"></div><div class="ph-l s"></div><div class="ph-l"></div><div class="push"><span class="pa">Push</span><span class="pb">Sent ✓</span></div></div>
+              <svg class="push-arrow" viewBox="0 0 60 20" aria-hidden="true"><path id="pa1" d="M2,10 H54"/><path d="M48,4 L56,10 L48,16"/><circle r="3.5"><animateMotion dur="1s" repeatCount="indefinite"><mpath href="#pa1"/></animateMotion></circle></svg>
+              <div class="hs"><div class="hs-h">HotSOS</div><div class="hs-g" id="hs-g"></div></div>
+            </div>
+            <div class="times"><span class="was">By hand: about 40 min of typing</span><span class="now">Now: under 1 minute</span></div>
+            <div class="sc-cap">An inspector checks the plan and presses Push. The Engineering team's daily sheet fills itself at the same time.</div>
+          </div>
+
+          <div class="scene" data-label="Time given">
+            <div class="sc-k">Time given</div>
+            <div class="sc-h">Built mostly on personal time</div>
+            <div class="donut-row">
+              <svg class="donut" viewBox="0 0 140 140" aria-hidden="true">
+                <circle cx="70" cy="70" r="52" class="d-bg"/>
+                <circle cx="70" cy="70" r="52" class="d-a" style="stroke:var(--c1);stroke-dasharray:163.4 326.7;stroke-dashoffset:0"/>
+                <circle cx="70" cy="70" r="52" class="d-a" style="stroke:var(--c2);stroke-dasharray:68.6 326.7;stroke-dashoffset:-163.4;animation-delay:.9s"/>
+                <circle cx="70" cy="70" r="52" class="d-a" style="stroke:var(--paid);stroke-dasharray:94.7 326.7;stroke-dashoffset:-232;animation-delay:1.4s"/>
+                <text x="70" y="72" class="d-n"><tspan class="rc" data-to="71">71</tspan>%</text>
+                <text x="70" y="91" class="d-s">personal time</text>
+              </svg>
+              <ul class="d-leg">
+                <li style="--i:0"><i style="background:var(--c1)"></i><b>48 h</b> around full inspection shifts</li>
+                <li style="--i:1"><i style="background:var(--c2)"></i><b>21 h</b> on days off</li>
+                <li style="--i:2"><i style="background:var(--paid)"></i><b>27 h</b> on the 8 project days on the schedule</li>
+              </ul>
+            </div>
+            <div class="sc-cap">96 measured hours of building since May 30. Only 8 of Hari's 89 working days were set aside for it.</div>
+          </div>
+
+          <div class="scene" data-label="What it saves">
+            <div class="sc-k">What it gives back</div>
+            <div class="sc-h">Staff time saved every year</div>
+            <div class="big"><span class="rc" data-to="889" data-sep="1">889</span><small> hours a year</small></div>
+            <div class="stack" aria-hidden="true"><i style="flex:304"></i><i style="flex:170"></i><i style="flex:122"></i><i style="flex:104"></i><i style="flex:104"></i><i style="flex:61"></i><i style="flex:24"></i></div>
+            <div class="chips"><span style="--i:0">≈ $22,000 a year</span><span style="--i:1">$0 a month to run</span><span style="--i:2">repaid in 2–3 months</span></div>
+            <div class="sc-cap">Room lists, HotSOS, status calls, staff planning, budget, Engineering sheet and reports. Estimates at $25 an hour, for managers to confirm.</div>
+          </div>
+
+        </div>
+        <div class="reel-foot">
+          <button class="reel-pp" id="reel-pp" type="button" aria-label="Pause highlights">❚❚</button>
+          <div class="reel-dots" id="reel-dots"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="tiles" data-reveal>
       <div class="tile accent"><div class="n"><span class="count" data-to="10.6" data-dec="1">10.6</span></div><div class="l">rooms inspected per inspection day</div><div class="d">The most of the 11 full-time inspectors. The others average 9.1.</div></div>
-      <div class="tile"><div class="n"><span class="count" data-to="2">2</span> apps</div><div class="l">built from scratch</div><div class="d">The BGV Scheduler and the GC8 Budget Tracker. 43 colleagues used them in the last 30 days.</div></div>
+      <div class="tile"><div class="n"><span class="count" data-to="2">2</span> apps</div><div class="l">built from scratch</div><div class="d">The BGV Scheduler and the GC8 Budget Tracker. 41 colleagues used the scheduler in the last 30 days.</div></div>
       <div class="tile"><div class="n"><span class="count" data-to="71">71</span>%</div><div class="l">of the building time was personal time</div><div class="d">Only 8 days on the schedule were set aside for the project.</div></div>
       <div class="tile"><div class="n">~<span class="count" data-to="890" data-sep="1">890</span> h</div><div class="l">of staff time saved a year</div><div class="d">About $22,000 a year, and it costs nothing a month to run.</div></div>
     </div>
@@ -419,12 +608,12 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
   <div class="sec-head">
     <span class="num">5 · What it gives back</span>
     <h2>Used every day, saving time every day</h2>
-    <p>In the last 30 days, 43 people used the BGV Scheduler: 28 housekeepers, 10 inspectors and 4 managers among them.</p>
+    <p>In the last 30 days, 41 colleagues used the BGV Scheduler: 28 housekeepers, 10 inspectors and 3 managers. Hari's own sign-ins are not counted.</p>
   </div>
   <div class="grid3" style="margin-bottom:16px" data-reveal>
-    <div class="tile"><div class="n"><span class="count" data-to="43">43</span></div><div class="l">people using it</div><div class="d">last 30 days</div></div>
-    <div class="tile"><div class="n"><span class="count" data-to="270">270</span></div><div class="l">sign-ins</div><div class="d">last 30 days</div></div>
-    <div class="tile"><div class="n"><span class="count" data-to="635">635</span></div><div class="l">rooms marked done on phones</div><div class="d">368 cleaned and 267 inspected, last 30 days</div></div>
+    <div class="tile"><div class="n"><span class="count" data-to="41">41</span></div><div class="l">colleagues using it</div><div class="d">28 housekeepers, 10 inspectors and 3 managers, last 30 days</div></div>
+    <div class="tile"><div class="n"><span class="count" data-to="177">177</span></div><div class="l">sign-ins by colleagues</div><div class="d">last 30 days, not counting Hari's own</div></div>
+    <div class="tile"><div class="n"><span class="count" data-to="727">727</span></div><div class="l">rooms followed live</div><div class="d">since live tracking began on Oct 9: statuses arrive from HotSOS every few minutes, with no calls or radio</div></div>
   </div>
   <div class="card">
     <h3>Better plans than by hand</h3>
@@ -461,7 +650,7 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
       <li><b>Days on the schedule and last-minute absences:</b> the department's weekly staff schedule. "Full-time" means on the schedule 3.5 or more days a week, and still on the team.</li>
       <li><b>Hours building:</b> the time stamps of 366 saved changes in the three code projects on GitHub (BGV Scheduler, the first version of it, and GC8 Budget Tracker). Changes less than two hours apart count as one sitting, plus 30 minutes to get started. This is a floor, not the full total.</li>
       <li><b>Project days vs personal time:</b> a project day is a day whose entry on Hari's staff schedule mentions projects, the system or the websites (May 1 – Oct 15). Every other hour is counted as personal time, whether on a regular inspection day or a day off.</li>
-      <li><b>Use:</b> the app's sign-in and room records, Sep 15 – Oct 15, 2026.</li>
+      <li><b>Use:</b> the app's sign-in log, Sep 15 – Oct 15, 2026, counting colleagues only (Hari's two accounts left out), and its room-status records since live HotSOS tracking began on Oct 9.</li>
       <li><b>Time and money saved:</b> estimates of how long each task took by hand, and an assumed $25 an hour. Managers can adjust both.</li>
     </ul>
   </div>
@@ -515,6 +704,64 @@ function showTip(e) {
 document.addEventListener("pointermove", showTip);
 document.addEventListener("pointerdown", showTip);
 addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });
+
+
+/* ---------- hero reel ---------- */
+(function () {
+  const reel = document.getElementById("reel");
+  const scenes = [...reel.querySelectorAll(".scene")];
+  const dots = document.getElementById("reel-dots"), pp = document.getElementById("reel-pp");
+  const RDUR = 6500;
+  let at = 0, playing = !RM, hover = false, timer = null, startedAt = 0, left = RDUR;
+  document.getElementById("hs-g").innerHTML = Array.from({ length: 32 }, (_, i) => `<i style="--i:${i}"></i>`).join("");
+  reel.style.setProperty("--rdur", RDUR + "ms");
+  dots.innerHTML = scenes.map(sc => `<button type="button" aria-label="${sc.dataset.label}"><span></span></button>`).join("");
+  if (RM) reel.classList.add("still");
+  function countIn(sc) {
+    sc.querySelectorAll(".rc").forEach(el => {
+      const to = +el.dataset.to, dec = +(el.dataset.dec || 0), sep = el.dataset.sep;
+      const fmt = v => sep ? Math.round(v).toLocaleString("en-US") : v.toFixed(dec);
+      if (RM) { el.textContent = fmt(to); return; }
+      const t0 = performance.now(), D = 1200;
+      const step = t => { const p = Math.min(1, (t - t0) / D); el.textContent = fmt(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+      el.textContent = fmt(0); requestAnimationFrame(step);
+    });
+  }
+  function arm() {
+    clearTimeout(timer); timer = null;
+    if (playing && !hover) { startedAt = performance.now(); timer = setTimeout(() => go((at + 1) % scenes.length), left); }
+  }
+  function go(i) {
+    at = i; left = RDUR;
+    scenes.forEach(sc => sc.classList.remove("on"));
+    void reel.offsetWidth;
+    scenes[i].classList.add("on");
+    [...dots.children].forEach((b, j) => { b.classList.remove("on"); b.classList.toggle("done", j < i); b.setAttribute("aria-current", j === i ? "true" : "false"); });
+    void dots.offsetWidth;
+    dots.children[i].classList.add("on");
+    countIn(scenes[i]);
+    arm();
+  }
+  function hold() {
+    if (timer) { clearTimeout(timer); timer = null; left = Math.max(300, left - (performance.now() - startedAt)); }
+    reel.classList.add("paused");
+  }
+  function setPlay(p) {
+    playing = p;
+    pp.textContent = p ? "❚❚" : "▶"; pp.setAttribute("aria-label", p ? "Pause highlights" : "Play highlights");
+    reel.classList.remove("still");
+    if (p) { reel.classList.remove("paused"); arm(); } else hold();
+  }
+  pp.addEventListener("click", () => setPlay(!playing));
+  dots.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    reel.classList.remove("paused"); go([...dots.children].indexOf(b)); if (!playing) hold();
+  });
+  reel.addEventListener("mouseenter", () => { hover = true; if (playing) hold(); });
+  reel.addEventListener("mouseleave", () => { hover = false; if (playing) { reel.classList.remove("paused"); arm(); } });
+  if (RM) { pp.textContent = "▶"; pp.setAttribute("aria-label", "Play highlights"); }
+  go(0);
+})();
 
 /* ---------- 1. inspections chart ---------- */
 const INSP = [
