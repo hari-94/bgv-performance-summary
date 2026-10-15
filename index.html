@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Hari Vardan — 2026 Summary</title>
+<meta name="description" content="Hari Vardan's 2026 work summary: inspection results, the two apps Hari built for BGV Housekeeping, the time given to them and what they save.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f7f6f2; --surface:#ffffff; --surface-2:#f0eee8; --text:#171715; --text-2:#55534d; --text-3:#7a786f;
+  --line:#e2dfd6; --line-2:#cfcbc0;
+  --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --paid:#9a978d; --peer:#cbc8be; --empty:#ebe9e2;
+  --soft:#e6effb; --soft-2:#fdeee6; --good:#0a7f0a;
+  --shadow:0 1px 2px rgba(20,20,15,.05),0 8px 24px rgba(20,20,15,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121211; --surface:#1b1b19; --surface-2:#242422; --text:#f3f2ec; --text-2:#c3c2b7; --text-3:#9a988e;
+    --line:#33322e; --line-2:#46453f;
+    --c1:#3987e5; --c2:#d95926; --c3:#199e70; --paid:#7d7b72; --peer:#4b4a45; --empty:#262624;
+    --soft:#1b2a3e; --soft-2:#3a2318; --good:#3cc23c;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121211; --surface:#1b1b19; --surface-2:#242422; --text:#f3f2ec; --text-2:#c3c2b7; --text-3:#9a988e;
+  --line:#33322e; --line-2:#46453f;
+  --c1:#3987e5; --c2:#d95926; --c3:#199e70; --paid:#7d7b72; --peer:#4b4a45; --empty:#262624;
+  --soft:#1b2a3e; --soft-2:#3a2318; --good:#3cc23c;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+h1,h2,h3{line-height:1.2;margin:0;letter-spacing:-.015em}
+p{margin:0 0 12px}
+a{color:var(--c1)}
+.muted{color:var(--text-2)}
+.small{font-size:14px}
+.tiny{font-size:13px;color:var(--text-3)}
+strong{font-weight:650}
+
+/* hero */
+.hero{padding:56px 0 36px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--c1);margin-bottom:10px}
+.hero h1{font-size:clamp(34px,6vw,52px);font-weight:800}
+.role{font-size:18px;color:var(--text-2);margin:6px 0 18px}
+.lead{font-size:clamp(18px,2.4vw,21px);max-width:760px;line-height:1.5}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.tile .n{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.tile .l{font-weight:600;margin-top:6px;line-height:1.35}
+.tile .d{font-size:13.5px;color:var(--text-2);margin-top:6px;line-height:1.45}
+.tile.accent .n{color:var(--c1)}
+
+/* nav */
+nav.jump{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.jump .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.jump .wrap::-webkit-scrollbar{display:none}
+nav.jump a{flex:0 0 auto;text-decoration:none;color:var(--text-2);font-size:14px;font-weight:550;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+nav.jump a:hover,nav.jump a.on{color:var(--text);border-color:var(--line-2)}
+nav.jump a.on{background:var(--soft);border-color:transparent;color:var(--c1)}
+
+/* sections */
+section{padding:56px 0 8px;scroll-margin-top:56px}
+.sec-head{max-width:780px;margin-bottom:22px}
+.num{display:inline-block;font-size:13px;font-weight:700;color:var(--c1);background:var(--soft);border-radius:6px;padding:2px 8px;margin-bottom:10px}
+section h2{font-size:clamp(26px,3.6vw,34px);font-weight:750;margin-bottom:12px}
+.sec-head p{font-size:18px;color:var(--text-2)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+.card h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.card .sub{font-size:14px;color:var(--text-2);margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.note{font-size:14px;color:var(--text-2);border-left:3px solid var(--line-2);padding:2px 0 2px 12px;margin:14px 0 0}
+
+/* glossary */
+.gloss{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gloss>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.gloss b{display:block;font-size:15px;margin-bottom:2px}
+.gloss span{font-size:14px;color:var(--text-2);line-height:1.45;display:block}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;font-weight:600;color:var(--text-2)}
+td.v,th.v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.me{font-weight:700;color:var(--c1)}
+.table-scroll{overflow-x:auto}
+
+/* charts */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:inherit}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;color:var(--text-2);margin:2px 0 12px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.grow{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.in .grow{transform:scaleX(1)}
+#tip{position:fixed;z-index:50;pointer-events:none;background:var(--text);color:var(--bg);font-size:13px;line-height:1.4;padding:7px 10px;border-radius:8px;max-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+
+/* apps */
+.app-card{display:flex;flex-direction:column}
+.app-card .tag{font-size:12.5px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
+.app-card h3{font-size:22px}
+.app-card ul{margin:10px 0 14px;padding-left:20px}
+.app-card li{margin-bottom:6px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.facts span{font-size:13px;background:var(--surface-2);border-radius:999px;padding:4px 10px;color:var(--text-2)}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.in .mod{opacity:1;transform:none}
+.mod b{display:block;font-size:15.5px;margin-bottom:4px}
+.mod p{font-size:14px;color:var(--text-2);margin:0 0 8px;line-height:1.45}
+.who{display:flex;flex-wrap:wrap;gap:4px}
+.who span{font-size:12px;font-weight:600;border-radius:999px;padding:2px 8px;background:var(--soft);color:var(--c1)}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin:0;padding:0;list-style:none}
+.rules li{position:relative;padding-left:26px;font-size:15px}
+.rules li:before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:50%;background:var(--soft);box-shadow:inset 0 0 0 5px var(--soft),inset 0 0 0 16px var(--c1)}
+
+/* flow diagram */
+.player{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.steps{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+.steps button,.play{font:inherit;font-size:13.5px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--text-2);border-radius:999px;padding:6px 12px;cursor:pointer;position:relative;overflow:hidden}
+.steps button.on{color:var(--c1);border-color:var(--c1)}
+.steps button .bar{position:absolute;left:0;bottom:0;height:3px;background:var(--c1);width:0}
+.steps button.on.run .bar{animation:fill var(--dur,7s) linear forwards}
+@keyframes fill{to{width:100%}}
+.play{color:var(--text);min-width:92px}
+.flow-wrap{display:grid;grid-template-columns:1fr;gap:14px}
+.caption{background:var(--surface-2);border-radius:12px;padding:16px 18px;min-height:128px}
+.caption .t{font-size:13px;font-weight:700;color:var(--c1);letter-spacing:.04em;text-transform:uppercase}
+.caption h4{font-size:18px;margin:4px 0 8px;line-height:1.3}
+.caption p{font-size:15px;color:var(--text-2);margin:0}
+.caption.swap{animation:swap .45s ease}
+@keyframes swap{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.node rect{fill:var(--surface);stroke:var(--line-2);stroke-width:1.2;transition:fill .4s,stroke .4s,opacity .4s}
+.node text{transition:opacity .4s}
+.node .t{font-weight:650;fill:var(--text)}
+.node .s{fill:var(--text-2)}
+.node.core rect{fill:var(--surface-2)}
+.node.on rect{stroke:var(--c1);stroke-width:2;fill:var(--soft)}
+.node.off{opacity:.42}
+.edge{fill:none;stroke:var(--line-2);stroke-width:1.5;transition:stroke .4s,opacity .4s}
+.edge.on{stroke:var(--c1);stroke-width:2.4}
+.edge.off{opacity:.45}
+.dot{fill:var(--c1);stroke:var(--surface);stroke-width:2}
+.grp{font-size:11px;font-weight:700;letter-spacing:.08em;fill:var(--text-3)}
+
+/* before/after */
+.lane{margin-bottom:18px}
+.lane-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.lane-head b{font-size:15px}
+.lane-head .tot{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+.track{display:flex;height:34px;background:var(--empty);border-radius:6px;overflow:hidden;gap:2px}
+.seg{height:100%;transform-origin:left center;transform:scaleX(0);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.in .seg{transform:scaleX(1)}
+.seg:first-child{border-radius:6px 0 0 6px}
+.lane ol{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13.5px;color:var(--text-2)}
+.lane ol i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+
+/* split bar */
+.split{display:flex;gap:2px;height:46px;border-radius:8px;overflow:hidden;clip-path:inset(0 100% 0 0);transition:clip-path 1.4s cubic-bezier(.2,.7,.2,1)}
+.in .split{clip-path:inset(0 0 0 0)}
+.split div{height:100%}
+.split-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.split-legend>div{border-top:4px solid;padding-top:8px}
+.split-legend .h{font-size:26px;font-weight:800;line-height:1.1}
+.split-legend .h small{font-size:14px;font-weight:600;color:var(--text-2)}
+.split-legend .w{font-size:14px;color:var(--text-2);line-height:1.4;margin-top:4px}
+.cal-cell{opacity:0;transition:opacity .35s ease}
+.in .cal-cell{opacity:1}
+
+/* savings */
+.sv{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr) 56px;gap:6px 12px;align-items:center}
+.sv .lab{font-size:14.5px;line-height:1.3}
+.sv .lab small{display:block;color:var(--text-3);font-size:12.5px;margin-top:2px}
+.sv .tr{height:22px;background:var(--empty);border-radius:4px;overflow:hidden}
+.sv .tr div{height:100%;background:var(--c1);border-radius:0 4px 4px 0;transform-origin:left center;transform:scaleX(0);transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.in .sv .tr div{transform:scaleX(1)}
+.sv .val{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.sv .total{border-top:1px solid var(--line);padding-top:8px;font-weight:700}
+.money{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.money>div{background:var(--surface-2);border-radius:12px;padding:14px}
+.money .n{font-size:24px;font-weight:800;line-height:1.15}
+.money .w{font-size:13.5px;color:var(--text-2);margin-top:4px;line-height:1.4}
+.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ba>div{background:var(--surface-2);border-radius:12px;padding:14px}
+.ba .n{font-size:22px;font-weight:800}
+.ba .n .arrow{color:var(--text-3);font-weight:500;margin:0 6px}
+.ba .w{font-size:13.5px;color:var(--text-2);line-height:1.4;margin-top:4px}
+
+ul.method{padding-left:20px;margin:0}
+ul.method li{margin-bottom:10px;color:var(--text-2);font-size:15px}
+ul.method b{color:var(--text)}
+footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
+
+@media (max-width:860px){
+  .tiles{grid-template-columns:1fr 1fr}
+  .caption{min-height:200px}
+  .mods{grid-template-columns:1fr 1fr}
+  .money{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .hero{padding:36px 0 28px}
+  .grid2,.grid3,.gloss,.rules,.split-legend,.ba{grid-template-columns:1fr}
+  .mods{grid-template-columns:1fr}
+  .sv{grid-template-columns:minmax(0,1fr) 52px}
+  .sv .tr{grid-column:1 / -1;order:3;margin-bottom:8px}
+  .sv .lab{order:1}.sv .val{order:2}
+  .card{padding:16px}
+  section{padding-top:44px}
+}
+@media (max-width:400px){ .tiles,.money{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .grow,.seg,.sv .tr div,.split,.mod,.cal-cell{transition:none!important;transform:none!important;clip-path:none!important;opacity:1!important}
+  .caption.swap{animation:none}
+}
+</style>
+</head>
+<body>
+<div id="tip" hidden></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">2026 work summary · BGV Housekeeping</div>
+    <h1>Hari Vardan</h1>
+    <div class="role">Room inspector (RQS) · January – October 2026</div>
+    <p class="lead">Hari inspects more rooms per day than anyone else on the full-time inspection team. Alongside that, mostly on personal time, Hari designed and built the software the housekeeping department now uses to plan and run every day.</p>
+    <div class="tiles" data-reveal>
+      <div class="tile accent"><div class="n"><span class="count" data-to="10.6" data-dec="1">10.6</span></div><div class="l">rooms inspected per inspection day</div><div class="d">The most of the 11 full-time inspectors. The others average 9.1.</div></div>
+      <div class="tile"><div class="n"><span class="count" data-to="2">2</span> apps</div><div class="l">built from scratch</div><div class="d">The BGV Scheduler and the GC8 Budget Tracker. 43 colleagues used them in the last 30 days.</div></div>
+      <div class="tile"><div class="n"><span class="count" data-to="71">71</span>%</div><div class="l">of the building time was personal time</div><div class="d">Only 8 days on the schedule were set aside for the project.</div></div>
+      <div class="tile"><div class="n">~<span class="count" data-to="890" data-sep="1">890</span> h</div><div class="l">of staff time saved a year</div><div class="d">About $22,000 a year, and it costs nothing a month to run.</div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <div class="wrap">
+    <a href="#basics">The basics</a>
+    <a href="#inspections">Inspections</a>
+    <a href="#apps">The apps</a>
+    <a href="#how">How it works</a>
+    <a href="#time">Time given</a>
+    <a href="#value">What it saves</a>
+    <a href="#method">How we measured</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="basics">
+  <div class="sec-head">
+    <span class="num">Start here</span>
+    <h2>The job in one minute</h2>
+    <p>New to hotel housekeeping? These are the only terms you need for this page.</p>
+  </div>
+  <div class="gloss">
+    <div><b>Inspector (RQS)</b><span>Checks each cleaned room before a guest gets it and leads a small team of housekeepers. This is Hari's role.</span></div>
+    <div><b>Full Clean</b><span>A room cleaned top to bottom after a guest checks out. Every one is inspected.</span></div>
+    <div><b>Daily Service</b><span>A lighter tidy-up for guests who are staying on.</span></div>
+    <div><b>Room list (chart)</b><span>One housekeeper's rooms for the day. Building these lists every morning is a big planning job.</span></div>
+    <div><b>HotSOS</b><span>The hotel's system where each room is assigned to a housekeeper and its status is tracked.</span></div>
+    <div><b>SSRS report</b><span>The hotel's daily report of which rooms need cleaning, and how.</span></div>
+  </div>
+</section>
+
+<section id="inspections">
+  <div class="sec-head">
+    <span class="num">1 · Core job</span>
+    <h2>The most rooms inspected per day on the team</h2>
+    <p>From January 1 to October 14, Hari inspected 1,124 rooms, the second-highest total, while on the schedule 11 fewer days than the average full-time inspector.</p>
+  </div>
+  <div class="card chart" data-reveal>
+    <h3>Rooms inspected per inspection day</h3>
+    <div class="sub">Jan 1 – Oct 14, 2026 · the 11 full-time inspectors · colleagues are shown as Peer 1–10</div>
+    <div id="insp-chart"></div>
+  </div>
+  <div class="card">
+    <h3>Side by side with the average full-time inspector</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>Jan 1 – Oct 14, 2026</th><th class="v">Hari</th><th class="v">Average of the other 10</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td>Rooms inspected</td><td class="v me">1,124</td><td class="v">934</td><td class="muted small">20% more rooms</td></tr>
+        <tr><td>Days on the schedule</td><td class="v me">156</td><td class="v">167</td><td class="muted small">11 fewer days</td></tr>
+        <tr><td>Rooms inspected for every day on the schedule</td><td class="v me">7.2</td><td class="v">5.6</td><td class="muted small">29% more per day</td></tr>
+        <tr><td>Last-minute absences (days)</td><td class="v me">0</td><td class="v">1.7</td><td class="muted small">Always reliable</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">40 of Hari's 156 days on the schedule were other work (projects, special tasks), so the chart above counts only days with inspections. "Full-time" means on the schedule 3.5 or more days a week and still on the team.</p>
+  </div>
+</section>
+
+<section id="apps">
+  <div class="sec-head">
+    <span class="num">2 · Above and beyond</span>
+    <h2>Two apps, built from scratch</h2>
+    <p>Each morning, a lot of time went into copying the same information between the hotel's reports, spreadsheets and HotSOS. Hari saw that a computer could do this, then designed and built the software, and now keeps it running.</p>
+  </div>
+  <div class="grid2">
+    <div class="card app-card">
+      <div class="tag">Used every day since June</div>
+      <h3>BGV Scheduler</h3>
+      <p class="muted">Plans and runs the day's cleaning for the whole department.</p>
+      <ul>
+        <li>Builds every housekeeper's room list at 5 AM, before anyone arrives</li>
+        <li>Sends all the assignments to HotSOS with one button</li>
+        <li>Puts each person's rooms on their phone, in English or Spanish</li>
+        <li>Gives managers a live view of the floor, a staffing forecast and a performance report</li>
+      </ul>
+      <div class="facts"><span>305 updates since June 3</span><span>About 27,000 lines of code</span><span>46 parts</span></div>
+    </div>
+    <div class="card app-card">
+      <div class="tag">Replaced the budget spreadsheet</div>
+      <h3>GC8 Budget Tracker</h3>
+      <p class="muted">Keeps the department's spending against its budget, in one place.</p>
+      <ul>
+        <li>Budget against actual spend, by category</li>
+        <li>Every expense logged with notes, and a full history of who changed what</li>
+        <li>Planned spending and user roles</li>
+        <li>1,104 budget lines and 699 expenses moved over from the old workbook</li>
+      </ul>
+      <div class="facts"><span>52 updates, Jul 10 – Sep 12</span><span>Managers</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-reveal>
+    <h3>What's inside the BGV Scheduler</h3>
+    <div class="sub">Each part replaces something that was done by hand.</div>
+    <div class="mods" id="mods"></div>
+  </div>
+
+  <div class="card">
+    <h3>It plans by the department's own rules</h3>
+    <div class="sub">The app follows the same rules an experienced supervisor would, every time.</div>
+    <ul class="rules">
+      <li>No one gets more Full Cleans than fit in a working day.</li>
+      <li>Daily Service lists are filled to a full day before anyone is moved off Full Cleans.</li>
+      <li>Rooms in one apartment stay with one person, and buildings are not mixed on one list.</li>
+      <li>Rooms are listed in walking order, floor by floor.</li>
+      <li>Rooms with early arrivals are cleaned first.</li>
+      <li>At weekends, carpet cleaning for pet rooms and linen stripping are assigned automatically.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how">
+  <div class="sec-head">
+    <span class="num">3 · How it works</span>
+    <h2>A normal day, step by step</h2>
+    <p>Press play to watch a day. The moving dots show information travelling between the systems; nobody has to copy it by hand.</p>
+  </div>
+  <div class="card" id="flow-card" data-reveal>
+    <div class="player">
+      <button class="play" id="play" type="button" aria-label="Pause the day">❚❚ Pause</button>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="flow-wrap">
+      <div class="chart" id="flow"></div>
+      <div class="caption" id="caption" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="card" id="morning" data-reveal>
+    <h3>The morning, before and after</h3>
+    <div class="sub">An inspector's first job of the day, in minutes</div>
+    <div id="lanes"></div>
+    <p class="note">About an hour and a half of an inspector's morning goes back to the floor, every day. The "before" times are estimates for managers to confirm.</p>
+  </div>
+</section>
+
+<section id="time">
+  <div class="sec-head">
+    <span class="num">4 · Time given</span>
+    <h2>Built mostly on personal time</h2>
+    <p>Since May, only 8 of Hari's 89 working days had the project on the schedule. The rest of the building was done around a full inspection workload, or on days off.</p>
+  </div>
+  <div class="card" data-reveal>
+    <h3>Where the 96 measured hours came from</h3>
+    <div class="sub">Hours of app building, May 30 – Oct 15, 2026</div>
+    <div class="split" id="split"></div>
+    <div class="split-legend" id="split-legend"></div>
+  </div>
+  <div class="card chart" data-reveal>
+    <h3>Every day with app work</h3>
+    <div class="sub">One square per day, May 25 – Oct 18 · point at or tap a square for the hours</div>
+    <div class="legend" id="cal-legend"></div>
+    <div id="cal"></div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>The 8 project days on the schedule</h3>
+      <div class="sub">Days where Hari's schedule entry mentions projects, the system or the websites</div>
+      <table>
+        <tbody id="proj-days"></tbody>
+      </table>
+      <p class="note">Several of these days were shared with other duties, so not all of each day went to the apps.</p>
+    </div>
+    <div class="card">
+      <h3>96 hours is the minimum</h3>
+      <p class="muted">The 96 hours are measured from the time stamps of 366 saved changes to the code. Testing on the floor, checking results against the sheets and showing colleagues how to use the apps leave no time stamp.</p>
+      <p class="muted">A realistic total is <strong>150–190 hours</strong>. Even if all 8 project days had gone entirely to the apps (64 hours), <strong>at least 86 hours</strong> were Hari's own time.</p>
+      <p class="muted" id="outside-note"></p>
+    </div>
+  </div>
+</section>
+
+<section id="value">
+  <div class="sec-head">
+    <span class="num">5 · What it gives back</span>
+    <h2>Used every day, saving time every day</h2>
+    <p>In the last 30 days, 43 people used the BGV Scheduler: 28 housekeepers, 10 inspectors and 4 managers among them.</p>
+  </div>
+  <div class="grid3" style="margin-bottom:16px" data-reveal>
+    <div class="tile"><div class="n"><span class="count" data-to="43">43</span></div><div class="l">people using it</div><div class="d">last 30 days</div></div>
+    <div class="tile"><div class="n"><span class="count" data-to="270">270</span></div><div class="l">sign-ins</div><div class="d">last 30 days</div></div>
+    <div class="tile"><div class="n"><span class="count" data-to="635">635</span></div><div class="l">rooms marked done on phones</div><div class="d">368 cleaned and 267 inspected, last 30 days</div></div>
+  </div>
+  <div class="card">
+    <h3>Better plans than by hand</h3>
+    <div class="sub">Measured over the days stored in the app, before and after each improvement</div>
+    <div class="ba">
+      <div><div class="n">112<span class="arrow">→</span>153</div><div class="w">Daily Service lists kept inside one building. More is better: less walking between buildings.</div></div>
+      <div><div class="n">245<span class="arrow">→</span>192</div><div class="w">Inspector rounds that cross between buildings. Fewer is better.</div></div>
+      <div><div class="n">95%</div><div class="w">of room lists are paced to finish by 3:30 PM.</div></div>
+    </div>
+  </div>
+  <div class="card" data-reveal>
+    <h3>Staff hours saved a year</h3>
+    <div class="sub">Estimated: what each task took by hand, minus what it takes now</div>
+    <div class="sv" id="sv"></div>
+    <div class="money">
+      <div><div class="n">≈ $22,000</div><div class="w">a year: 889 hours at an assumed $25 an hour. Even at half the estimates, about $11,000.</div></div>
+      <div><div class="n">$0</div><div class="w">a month to run: free hosting, and the office PC was already there.</div></div>
+      <div><div class="n">$25–50k</div><div class="w">to buy in: an estimated 300–500 hours of a contractor at $75–100 an hour.</div></div>
+      <div><div class="n">2–3 months</div><div class="w">for the time saved to repay the 150–190 hours put in.</div></div>
+    </div>
+    <p class="note">The "by hand" times and the $25 rate are assumptions for managers to adjust. The totals scale with them.</p>
+  </div>
+</section>
+
+<section id="method">
+  <div class="sec-head">
+    <span class="num">Sources</span>
+    <h2>How we measured</h2>
+    <p>Every measured number comes from the team's own records. Estimates are marked as estimates.</p>
+  </div>
+  <div class="card">
+    <ul class="method">
+      <li><b>Rooms inspected:</b> counted from every daily tab of the GC8 Inspections 2026 workbook, Jan 1 – Oct 14. A room counts once, for the first inspector named on it. Full Cleans only; Daily Service is not counted.</li>
+      <li><b>Days on the schedule and last-minute absences:</b> the department's weekly staff schedule. "Full-time" means on the schedule 3.5 or more days a week, and still on the team.</li>
+      <li><b>Hours building:</b> the time stamps of 366 saved changes in the three code projects on GitHub (BGV Scheduler, the first version of it, and GC8 Budget Tracker). Changes less than two hours apart count as one sitting, plus 30 minutes to get started. This is a floor, not the full total.</li>
+      <li><b>Project days vs personal time:</b> a project day is a day whose entry on Hari's staff schedule mentions projects, the system or the websites (May 1 – Oct 15). Every other hour is counted as personal time, whether on a regular inspection day or a day off.</li>
+      <li><b>Use:</b> the app's sign-in and room records, Sep 15 – Oct 15, 2026.</li>
+      <li><b>Time and money saved:</b> estimates of how long each task took by hand, and an assumed $25 an hour. Managers can adjust both.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">Prepared October 15, 2026 · Colleagues are not named and appear as Peer 1–10.</div></footer>
+
+<script>
+(() => {
+const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const NS = "http://www.w3.org/2000/svg";
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+
+/* ---------- reveal on scroll ---------- */
+const revealers = new Map();
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in");
+  (revealers.get(e.target) || []).forEach(f => f());
+  io.unobserve(e.target);
+}), { threshold: 0.2 });
+function onReveal(el, f) { const l = revealers.get(el) || []; l.push(f); revealers.set(el, l); }
+document.querySelectorAll("[data-reveal]").forEach(el => io.observe(el));
+
+/* ---------- count-up numbers ---------- */
+document.querySelectorAll(".count").forEach(el => {
+  const to = +el.dataset.to, dec = +(el.dataset.dec || 0), sep = el.dataset.sep;
+  const fmt = v => sep ? Math.round(v).toLocaleString("en-US") : v.toFixed(dec);
+  const host = el.closest("[data-reveal]");
+  if (RM || !host) return;
+  el.textContent = fmt(0);
+  onReveal(host, () => {
+    const t0 = performance.now(), D = 1100;
+    const step = t => { const p = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(to * e); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+});
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById("tip");
+function showTip(e) {
+  const t = e.target.closest && e.target.closest("[data-tip]");
+  if (!t) { tip.hidden = true; return; }
+  tip.textContent = t.dataset.tip; tip.hidden = false;
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8);
+  const y = e.clientY + 18 + tip.offsetHeight > innerHeight ? e.clientY - tip.offsetHeight - 12 : e.clientY + 18;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = y + "px";
+}
+document.addEventListener("pointermove", showTip);
+document.addEventListener("pointerdown", showTip);
+addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });
+
+/* ---------- 1. inspections chart ---------- */
+const INSP = [
+  { who: "Hari", me: true, rooms: 1124, days: 106 },
+  { who: "Peer 1", rooms: 1135, days: 123 }, { who: "Peer 2", rooms: 1122, days: 121 },
+  { who: "Peer 3", rooms: 1060, days: 119 }, { who: "Peer 4", rooms: 995, days: 112 },
+  { who: "Peer 5", rooms: 910, days: 104 }, { who: "Peer 6", rooms: 909, days: 109 },
+  { who: "Peer 7", rooms: 881, days: 89 }, { who: "Peer 8", rooms: 869, days: 97 },
+  { who: "Peer 9", rooms: 737, days: 79 }, { who: "Peer 10", rooms: 721, days: 75 }];
+function hbarPath(x, y, w, h, r) {
+  r = Math.min(r, w, h / 2);
+  return `M${x},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h - r}Q${x + w},${y + h} ${x + w - r},${y + h}H${x}Z`;
+}
+function drawInsp() {
+  const el = document.getElementById("insp-chart"), W = Math.max(280, el.clientWidth);
+  const rate = r => r.rooms / r.days;
+  const rows = INSP.slice().sort((a, b) => rate(b) - rate(a));
+  const peers = INSP.filter(r => !r.me);
+  const avg = peers.reduce((s, r) => s + r.rooms, 0) / peers.reduce((s, r) => s + r.days, 0);
+  const lab = W < 480 ? 62 : 84, val = 38, top = 30, bh = W < 480 ? 20 : 22, gap = 8, max = 11;
+  const pw = W - lab - val - 10, x = v => lab + v / max * pw;
+  const H = top + rows.length * (bh + gap);
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Rooms inspected per inspection day. Hari ${rate(INSP[0]).toFixed(1)}, highest of 11; others average ${avg.toFixed(1)}.">`;
+  const ax = x(avg);
+  s += `<line x1="${ax}" x2="${ax}" y1="${top - 8}" y2="${H - gap + 2}" stroke="var(--text-3)" stroke-dasharray="4 3"/>`;
+  s += `<text x="${ax - 6}" y="${top - 14}" text-anchor="end" font-size="12.5" fill="var(--text-2)">Others' average: ${avg.toFixed(1)}</text>`;
+  rows.forEach((r, i) => {
+    const y = top + i * (bh + gap), w = x(rate(r)) - lab;
+    const tipTxt = `${r.who}: ${rate(r).toFixed(1)} rooms a day (${r.rooms.toLocaleString("en-US")} rooms over ${r.days} inspection days)`;
+    s += `<text x="${lab - 10}" y="${y + bh / 2 + 4.5}" text-anchor="end" font-size="13" fill="${r.me ? "var(--text)" : "var(--text-2)"}" font-weight="${r.me ? 700 : 400}">${r.who}</text>`;
+    s += `<rect x="${lab}" y="${y - 3}" width="${pw}" height="${bh + 6}" fill="transparent" data-tip="${esc(tipTxt)}"/>`;
+    s += `<path class="grow" style="transition-delay:${i * 60}ms" d="${hbarPath(lab, y, w, bh, 4)}" fill="${r.me ? "var(--c1)" : "var(--peer)"}" pointer-events="none"/>`;
+    s += `<text x="${W - 2}" y="${y + bh / 2 + 4.5}" text-anchor="end" font-size="13" font-weight="${r.me ? 700 : 500}" fill="var(--text)" pointer-events="none">${rate(r).toFixed(1)}</text>`;
+  });
+  el.innerHTML = s + "</svg>";
+}
+
+/* ---------- 2. scheduler parts ---------- */
+const MODS = [
+  ["Room lists (Schedule)", "Turns the hotel's room report and the front desk's arrivals into every housekeeper's and inspector's list for the day.", ["Inspectors", "Managers"]],
+  ["5 AM automatic build", "Builds the day's lists and the day's tab in the inspections workbook before anyone arrives.", ["Runs by itself"]],
+  ["HotSOS in one button", "Assigns every room in HotSOS in under a minute, then reads room statuses back every few minutes.", ["Inspectors"]],
+  ["My Rooms on the phone", "Each housekeeper's rooms in walking order, in English or Spanish. Inspectors see their team and mark rooms checked.", ["Housekeepers", "Inspectors"]],
+  ["Live board", "The whole floor on one screen, room by room, as the day goes.", ["Managers", "Inspectors"]],
+  ["Staff schedule sync", "Reads the weekly staff schedule as soon as it changes; tracks attendance and last-minute absences.", ["Managers"]],
+  ["Staffing forecast", "How many housekeepers and inspectors the next three weeks need, worked out from the room bookings.", ["Managers"]],
+  ["Performance report", "Rooms inspected and cleaned per person, days worked, for any period, with an Excel download. Updates at 4 PM.", ["Managers"]],
+  ["Engineering daily sheet", "Fills the Engineering team's daily sheet automatically after each push.", ["Engineering"]],
+  ["Weekend carpets and stripping", "Puts the carpet cleaner on each building's pet rooms and the linen strippers on the busiest buildings.", ["Housepersons"]],
+  ["Property map", "The resort in 3-D, each room coloured by its status.", ["Inspectors", "Managers"]],
+  ["Alerts", "Watches the automation and sends an e-mail if anything stops.", ["Managers"]]];
+document.getElementById("mods").innerHTML = MODS.map((m, i) =>
+  `<div class="mod" style="transition-delay:${i * 50}ms"><b>${m[0]}</b><p>${m[1]}</p><div class="who">${m[2].map(w => `<span>${w}</span>`).join("")}</div></div>`).join("");
+
+/* ---------- 3. flow diagram ---------- */
+const NODES = {
+  ssrs:   { t: "Hotel room list", s: "SSRS report",           tt: "Room list",  ts: "SSRS",           g: "in" },
+  arr:    { t: "Front-desk arrivals", s: "Arrival Report",    tt: "Arrivals",   ts: "front desk",     g: "in" },
+  sched:  { t: "Staff schedule", s: "Excel, weekly",          tt: "Schedule",   ts: "Excel",          g: "in" },
+  pc:     { t: "Office PC", s: "runs the automation",          tt: "Office PC",  ts: "the automation", g: "core" },
+  app:    { t: "BGV app", s: "online, on any phone",           tt: "BGV app",    ts: "on any phone",   g: "core" },
+  hotsos: { t: "HotSOS", s: "room assignments",                tt: "HotSOS",     ts: "assignments",    g: "out" },
+  eng:    { t: "Engineering sheet", s: "daily list",           tt: "Engineering", ts: "sheet",         g: "out" },
+  insp:   { t: "Inspections sheet", s: "Excel, one tab a day", tt: "Inspections", ts: "sheet",         g: "out" },
+  alert:  { t: "Alert e-mail", s: "if anything stops",         tt: "Alerts",     ts: "e-mail",         g: "out" },
+  phones: { t: "Phones", s: "housekeepers and inspectors",     tt: "Phones",     ts: "all staff",      g: "out" },
+  mgr:    { t: "Managers", s: "live board, report, forecast",  tt: "Managers",   ts: "board, reports", g: "out" }};
+const EDGES = [["ssrs", "pc"], ["arr", "pc"], ["sched", "pc"], ["pc", "app"], ["pc", "hotsos"], ["pc", "eng"],
+  ["pc", "insp"], ["pc", "alert"], ["app", "phones"], ["app", "mgr"]];
+const LAYOUT = {
+  wide: { W: 960, H: 472, small: false, groups: [["WHAT COMES IN", 20], ["WHAT DOES THE WORK", 385], ["WHAT COMES OUT", 750]],
+    n: { ssrs: [20, 84, 190, 62], arr: [20, 206, 190, 62], sched: [20, 328, 190, 62],
+         pc: [385, 112, 190, 72], app: [385, 300, 190, 72],
+         hotsos: [750, 24, 190, 58], eng: [750, 99, 190, 58], insp: [750, 174, 190, 58], alert: [750, 249, 190, 58],
+         phones: [750, 330, 190, 58], mgr: [750, 405, 190, 58]} },
+  tall: { W: 360, H: 548, small: true, groups: [],
+    n: { ssrs: [6, 8, 110, 54], arr: [125, 8, 110, 54], sched: [244, 8, 110, 54],
+         pc: [96, 118, 168, 60], alert: [282, 121, 72, 54],
+         hotsos: [62, 236, 94, 54], eng: [162, 236, 94, 54], insp: [262, 236, 92, 54],
+         app: [96, 350, 168, 60],
+         phones: [30, 470, 140, 54], mgr: [190, 470, 140, 54]} } };
+function edgePath(L, a, b, i, k) {
+  const A = L.n[a], B = L.n[b];
+  const H = (x1, y1, x2, y2) => { const d = (x2 - x1) / 2; return `M${x1},${y1} C${x1 + d},${y1} ${x2 - d},${y2} ${x2},${y2}`; };
+  const V = (x1, y1, x2, y2) => { const d = (y2 - y1) / 2; return `M${x1},${y1} C${x1},${y1 + d} ${x2},${y2 - d} ${x2},${y2}`; };
+  const spreadY = (R, j, n) => R[1] + R[3] * (j + 1) / (n + 1);
+  const spreadX = (R, j, n) => R[0] + R[2] * (j + 1) / (n + 1);
+  if (!L.small) {
+    if (b === "pc" ) return H(A[0] + A[2], A[1] + A[3] / 2, B[0], spreadY(B, i, k));
+    if (a === "pc" && b === "app") return V(A[0] + A[2] / 2, A[1] + A[3], B[0] + B[2] / 2, B[1]);
+    return H(A[0] + A[2], spreadY(A, i, k), B[0], B[1] + B[3] / 2);
+  }
+  if (b === "pc") return V(A[0] + A[2] / 2, A[1] + A[3], spreadX(B, i, k), B[1]);
+  if (a === "pc" && b === "app") return `M${A[0]},${A[1] + A[3] / 2} C22,${A[1] + A[3] / 2} 22,${B[1] + B[3] / 2} ${B[0]},${B[1] + B[3] / 2}`;
+  if (a === "pc" && b === "alert") return H(A[0] + A[2], A[1] + A[3] / 2, B[0], B[1] + B[3] / 2);
+  return V(spreadX(A, i, k), A[1] + A[3], B[0] + B[2] / 2, B[1]);
+}
+const STEPS = [
+  { time: "5:00 AM", btn: "5 AM", title: "The day is planned before anyone arrives",
+    text: "The office PC reads which rooms need cleaning, who arrives today and who is working. It builds every housekeeper's room list by the department's rules, writes the day's tab in the inspections workbook and puts each person's rooms on their phone.",
+    flow: [["ssrs", "pc"], ["arr", "pc"], ["sched", "pc"], ["pc", "insp"], ["pc", "app"], ["app", "phones"]] },
+  { time: "7:00 AM", btn: "7 AM", title: "One button sends it all to HotSOS",
+    text: "An inspector checks the plan in the app and presses Push. In under a minute every room is assigned in HotSOS, and the Engineering team's daily sheet fills itself. This used to take about 40 minutes of typing.",
+    flow: [["phones", "app"], ["app", "pc"], ["pc", "hotsos"], ["pc", "eng"]] },
+  { time: "All day", btn: "All day", title: "Everyone sees the same live picture",
+    text: "Housekeepers work from their phones in English or Spanish, with rooms in walking order. Room statuses come back from HotSOS every few minutes, inspectors mark rooms checked, and managers follow the floor on a live board.",
+    flow: [["hotsos", "pc"], ["pc", "app"], ["phones", "app"], ["app", "mgr"]] },
+  { time: "4:00 PM", btn: "4 PM", title: "The performance report updates itself",
+    text: "The office PC reads the day's inspections tab and updates the report: rooms inspected and cleaned per person, days worked and last-minute absences, ready to download in Excel.",
+    flow: [["insp", "pc"], ["pc", "app"], ["app", "mgr"]] },
+  { time: "Round the clock", btn: "Overnight", title: "Planning ahead and keeping watch",
+    text: "Every two hours the PC refreshes a three-week staffing forecast, and it picks up changes to the staff schedule as soon as they are made. If anything stops, an alert e-mail goes out.",
+    flow: [["sched", "pc"], ["ssrs", "pc"], ["pc", "app"], ["app", "mgr"], ["pc", "alert"]] }];
+const STEP_MS = 8000;
+let layoutName = "", cur = 0, playing = !RM, timer = null;
+const flowEl = document.getElementById("flow"), capEl = document.getElementById("caption");
+const stepsEl = document.getElementById("steps"), playBtn = document.getElementById("play");
+stepsEl.innerHTML = STEPS.map((s, i) => `<button type="button" data-i="${i}">${s.btn}<span class="bar"></span></button>`).join("");
+stepsEl.style.setProperty("--dur", STEP_MS + "ms");
+function drawFlow(force) {
+  const name = flowEl.clientWidth < 560 ? "tall" : "wide";
+  if (name === layoutName && !force) return;
+  layoutName = name;
+  const L = LAYOUT[name];
+  const fanIn = EDGES.filter(e => e[1] === "pc").map(e => e[0]);
+  const fanOutPc = EDGES.filter(e => e[0] === "pc" && e[1] !== "app" && (name === "wide" || e[1] !== "alert")).map(e => e[1]);
+  const fanOutApp = EDGES.filter(e => e[0] === "app").map(e => e[1]);
+  let s = `<svg viewBox="0 0 ${L.W} ${L.H}" role="img" aria-label="How information flows between the hotel systems, the office PC, the app and the staff">`;
+  s += `<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9z" fill="var(--c1)"/></marker></defs>`;
+  L.groups.forEach(g => { s += `<text class="grp" x="${g[1]}" y="12">${g[0]}</text>`; });
+  EDGES.forEach(([a, b]) => {
+    let i = 0, k = 1;
+    if (b === "pc") { i = fanIn.indexOf(a); k = fanIn.length; }
+    else if (a === "pc" && fanOutPc.includes(b)) { i = fanOutPc.indexOf(b); k = fanOutPc.length; }
+    else if (a === "app") { i = fanOutApp.indexOf(b); k = fanOutApp.length; }
+    s += `<path class="edge" id="e-${a}-${b}" d="${edgePath(L, a, b, i, k)}"/>`;
+  });
+  s += `<g id="dots"></g>`;
+  Object.entries(L.n).forEach(([id, R]) => {
+    const N = NODES[id], t = L.small ? N.tt : N.t, sub = L.small ? N.ts : N.s;
+    const cx = R[0] + R[2] / 2, fs = L.small ? 13 : 14.5, ss = L.small ? 11 : 12.5;
+    s += `<g class="node ${N.g === "core" ? "core" : ""}" id="n-${id}"><rect x="${R[0]}" y="${R[1]}" width="${R[2]}" height="${R[3]}" rx="10"/>`;
+    s += `<text class="t" x="${cx}" y="${R[1] + R[3] / 2 - (L.small ? 2 : 3)}" text-anchor="middle" font-size="${fs}">${t}</text>`;
+    s += `<text class="s" x="${cx}" y="${R[1] + R[3] / 2 + (L.small ? 13 : 16)}" text-anchor="middle" font-size="${ss}">${sub}</text></g>`;
+  });
+  flowEl.innerHTML = s + "</svg>";
+  showStep(cur, false);
+}
+function showStep(i, animateCaption = true) {
+  cur = i;
+  const st = STEPS[i], svg = flowEl.querySelector("svg");
+  [...stepsEl.children].forEach((b, j) => { b.classList.toggle("on", j === i); b.classList.remove("run"); });
+  if (playing) { const b = stepsEl.children[i]; void b.offsetWidth; b.classList.add("run"); }
+  capEl.innerHTML = `<div class="t">${st.time}</div><h4>${st.title}</h4><p>${st.text}</p>`;
+  if (animateCaption) { capEl.classList.remove("swap"); void capEl.offsetWidth; capEl.classList.add("swap"); }
+  if (!svg) return;
+  const active = new Map(), nodes = new Set();
+  st.flow.forEach(([a, b]) => {
+    nodes.add(a); nodes.add(b);
+    if (EDGES.some(e => e[0] === a && e[1] === b)) active.set(`${a}-${b}`, false);
+    else active.set(`${b}-${a}`, true);
+  });
+  svg.querySelectorAll(".edge").forEach(p => {
+    const key = p.id.slice(2), on = active.has(key);
+    p.classList.toggle("on", on); p.classList.toggle("off", !on);
+    p.removeAttribute("marker-end"); p.removeAttribute("marker-start");
+    if (on) p.setAttribute(active.get(key) ? "marker-start" : "marker-end", "url(#ah)");
+  });
+  svg.querySelectorAll(".node").forEach(g => {
+    const on = nodes.has(g.id.slice(2));
+    g.classList.toggle("on", on); g.classList.toggle("off", !on);
+  });
+  const dots = svg.querySelector("#dots");
+  dots.innerHTML = "";
+  if (RM) return;
+  active.forEach((rev, key) => {
+    for (let k = 0; k < 3; k++) {
+      const c = document.createElementNS(NS, "circle");
+      c.setAttribute("r", layoutName === "tall" ? 3.6 : 4.6); c.setAttribute("class", "dot");
+      const m = document.createElementNS(NS, "animateMotion");
+      m.setAttribute("dur", "2.1s"); m.setAttribute("repeatCount", "indefinite");
+      m.setAttribute("begin", `${((svg.getCurrentTime ? svg.getCurrentTime() : 0) - k * 0.7).toFixed(2)}s`);
+      if (rev) { m.setAttribute("keyPoints", "1;0"); m.setAttribute("keyTimes", "0;1"); m.setAttribute("calcMode", "linear"); }
+      const mp = document.createElementNS(NS, "mpath");
+      mp.setAttribute("href", `#e-${key}`); mp.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", `#e-${key}`);
+      m.appendChild(mp); c.appendChild(m); dots.appendChild(c);
+    }
+  });
+}
+function schedule() {
+  clearTimeout(timer);
+  if (playing) timer = setTimeout(() => { showStep((cur + 1) % STEPS.length); schedule(); }, STEP_MS);
+}
+function setPlaying(p) {
+  playing = p;
+  playBtn.textContent = p ? "❚❚ Pause" : "▶ Play";
+  playBtn.setAttribute("aria-label", p ? "Pause the day" : "Play the day");
+  showStep(cur, false); schedule();
+}
+stepsEl.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  playing = false; playBtn.textContent = "▶ Play"; playBtn.setAttribute("aria-label", "Play the day");
+  clearTimeout(timer); showStep(+b.dataset.i);
+});
+playBtn.addEventListener("click", () => setPlaying(!playing));
+if (RM) { playBtn.textContent = "▶ Play"; }
+onReveal(document.getElementById("flow-card"), () => { if (playing) { showStep(0, false); schedule(); } });
+
+/* ---------- before / after lanes ---------- */
+const TASKS = [["Building the room lists", "var(--c1)"], ["Entering assignments in HotSOS", "var(--c2)"], ["Filling the Engineering sheet", "var(--c3)"]];
+const LANES = [
+  { name: "Before: by hand", mins: [60, 30, 10], words: ["about 60 min", "about 30 min", "about 10 min"] },
+  { name: "Now: with the app", mins: [10, 2, 0], words: ["10 min to check", "2 min, one button", "fills itself"] }];
+const MAXM = 100;
+document.getElementById("lanes").innerHTML = LANES.map((L, li) => {
+  const tot = L.mins.reduce((a, b) => a + b, 0);
+  const segs = L.mins.map((m, i) => m ? `<div class="seg" style="width:${m / MAXM * 100}%;background:${TASKS[i][1]};transition-delay:${li * 900 + i * 350}ms" data-tip="${esc(TASKS[i][0] + ": " + L.words[i])}"></div>` : "").join("");
+  const items = L.mins.map((m, i) => `<li><i style="background:${TASKS[i][1]}"></i>${TASKS[i][0]}: <b>${L.words[i]}</b></li>`).join("");
+  return `<div class="lane"><div class="lane-head"><b>${L.name}</b><span class="tot"><span class="count-m" data-to="${tot}">${tot}</span> min</span></div><div class="track">${segs}</div><ol>${items}</ol></div>`;
+}).join("");
+onReveal(document.getElementById("morning"), () => {
+  if (RM) return;
+  document.querySelectorAll(".count-m").forEach((el, li) => {
+    const to = +el.dataset.to, t0 = performance.now() + li * 900, D = 1100;
+    el.textContent = "0";
+    const step = t => { const p = Math.max(0, Math.min(1, (t - t0) / D)); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+});
+
+/* ---------- 4. time given ---------- */
+const DAYS = [["2026-05-30","paid",2.02,0.72],["2026-06-02","off",0.5,0.5],["2026-06-03","off",0.67,0.67],["2026-06-05","work",0.5,0.5],["2026-06-06","work",0.83,0.83],["2026-06-07","work",1.35,1.35],["2026-06-08","off",1.85,1.85],["2026-06-09","off",0.5,0.5],["2026-06-11","work",2.81,0.82],["2026-06-13","work",0.5,0.5],["2026-06-19","work",0.58,0],["2026-06-24","work",0.5,0],["2026-06-27","work",2.87,1.4],["2026-07-09","work",0.54,0],["2026-07-10","paid",3.22,0],["2026-07-11","work",1.11,0],["2026-07-12","work",1.38,0],["2026-07-13","paid",2.02,0],["2026-07-14","off",0.62,0],["2026-08-13","work",0.68,0],["2026-08-14","paid",1.3,0],["2026-08-18","off",1.56,1.56],["2026-08-19","paid",2.1,0],["2026-08-22","work",1.64,0],["2026-08-23","work",2.85,1.65],["2026-08-26","paid",5.06,0],["2026-08-30","work",0.73,0],["2026-08-31","off",3.51,3.51],["2026-09-01","off",1.14,1.14],["2026-09-02","off",1.29,0],["2026-09-03","work",2.29,2.29],["2026-09-04","off",6.96,3.14],["2026-09-05","work",4.14,0],["2026-09-09","off",1.29,1.29],["2026-09-12","work",4.38,1.66],["2026-09-13","work",0.5,0],["2026-09-19","work",3.49,1.52],["2026-09-20","work",0.5,0],["2026-10-05","off",0.61,0.61],["2026-10-08","paid",6.91,0],["2026-10-09","work",10.02,1.26],["2026-10-10","work",1.24,0],["2026-10-11","work",2.1,0.5],["2026-10-14","paid",4.82,0.5],["2026-10-15","work",0.5,0]];
+const KIND = {
+  paid: { c: "var(--paid)", short: "Project day on the schedule", long: "on the 8 days the schedule set aside for the project" },
+  work: { c: "var(--c1)", short: "Regular inspection day (own initiative)", long: "on regular inspection days, around a full workload" },
+  off:  { c: "var(--c2)", short: "Day off", long: "on scheduled days off" }};
+const sums = { paid: 0, work: 0, off: 0 }, counts = { paid: 0, work: 0, off: 0 };
+DAYS.forEach(([d, k, h]) => { sums[k] += h; counts[k]++; });
+const total = sums.paid + sums.work + sums.off;
+const R0 = v => Math.round(v);
+document.getElementById("split").innerHTML = ["paid", "work", "off"].map(k =>
+  `<div style="flex:${sums[k]};background:${KIND[k].c}" data-tip="${esc(KIND[k].short + ": " + R0(sums[k]) + " hours on " + counts[k] + " days")}"></div>`).join("");
+document.getElementById("split-legend").innerHTML = [
+  ["paid", "Paid project time", `on ${counts.paid} project days`],
+  ["work", "Personal time", `on ${counts.work} regular inspection days, around a full workload`],
+  ["off", "Personal time", `on ${counts.off} days off`]].map(([k, a, b]) =>
+  `<div style="border-color:${KIND[k].c}"><div class="h">${R0(sums[k])} h <small>${Math.round(sums[k] / total * 100)}%</small></div><div class="w"><b style="color:var(--text)">${a}</b><br>${b}</div></div>`).join("");
+const outsideWork = DAYS.filter(d => d[1] === "work").reduce((s, d) => s + d[3], 0);
+document.getElementById("outside-note").innerHTML = `On the ${counts.work} regular inspection days with app work, about <strong>${R0(outsideWork)} of the ${R0(sums.work)} hours</strong> were before 7 AM or after 4 PM.`;
+
+const PROJ = [["2026-05-30", "Projects"], ["2026-07-10", "Projects"], ["2026-07-13", "Regular shift, with projects"], ["2026-08-14", "Project, and helping with inspections"], ["2026-08-19", "Projects"], ["2026-08-26", "Work on our websites"], ["2026-10-08", "Inspector shift, working on the system"], ["2026-10-14", "Regular shift, with projects"]];
+document.getElementById("proj-days").innerHTML = PROJ.map(([d, what]) => {
+  const dt = new Date(d + "T12:00:00"), h = (DAYS.find(x => x[0] === d) || [0, 0, 0])[2];
+  return `<tr><td style="white-space:nowrap">${dt.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}</td><td class="muted small">${what}</td><td class="v small">${h.toFixed(1)} h</td></tr>`;
+}).join("");
+
+document.getElementById("cal-legend").innerHTML = ["paid", "work", "off"].map(k => `<span><i style="background:${KIND[k].c}"></i>${KIND[k].short}</span>`).join("")
+  + `<span><i style="background:var(--empty);box-shadow:inset 0 0 0 1px var(--line-2)"></i>No app work</span>`;
+function drawCal() {
+  const el = document.getElementById("cal"), W = Math.max(280, el.clientWidth);
+  const start = new Date("2026-05-25T12:00:00"), end = new Date("2026-10-18T12:00:00");
+  const weeks = Math.round((end - start) / 864e5 / 7) + 1, g = 3;
+  const map = new Map(DAYS.map(d => [d[0], d]));
+  const narrow = W < 560;
+  // wide: weeks run left to right, days top to bottom; narrow: weeks run down the page
+  const left = narrow ? 40 : 30, top = 18;
+  const s = narrow ? Math.max(14, Math.min(24, Math.floor((W - left) / 7) - g))
+                   : Math.max(9, Math.min(28, Math.floor((W - left) / weeks) - g));
+  const Wd = narrow ? left + 7 * (s + g) : left + weeks * (s + g);
+  const H = narrow ? top + weeks * (s + g) : top + 7 * (s + g);
+  let out = `<svg viewBox="0 0 ${Wd} ${H}" width="${Wd}" height="${H}" role="img" aria-label="Calendar of days with app work, coloured by type of day">`;
+  const dayL = ["Mon", "", "Wed", "", "Fri", "", "Sun"];
+  dayL.forEach((l, r) => { if (!l) return;
+    out += narrow ? `<text x="${left + r * (s + g) + s / 2}" y="11" text-anchor="middle" font-size="11" fill="var(--text-3)">${l}</text>`
+                  : `<text x="0" y="${top + r * (s + g) + s - 1}" font-size="11" fill="var(--text-3)">${l}</text>`; });
+  let lastMonth = -1;
+  for (let w = 0; w < weeks; w++) {
+    for (let r = 0; r < 7; r++) {
+      const dt = new Date(start.getTime() + (w * 7 + r) * 864e5);
+      if (dt > end) continue;
+      const iso = dt.toISOString().slice(0, 10);
+      const x = narrow ? left + r * (s + g) : left + w * (s + g), y = narrow ? top + w * (s + g) : top + r * (s + g);
+      if (r === 0 && dt.getMonth() !== lastMonth && dt.getDate() <= 7) {
+        lastMonth = dt.getMonth();
+        const m = dt.toLocaleDateString("en-US", { month: "short" });
+        out += narrow ? `<text x="0" y="${y + s / 2 + 4}" font-size="11" fill="var(--text-3)">${m}</text>`
+                      : `<text x="${x}" y="11" font-size="11" fill="var(--text-3)">${m}</text>`;
+      }
+      const d = map.get(iso), label = dt.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+      const fill = d ? KIND[d[1]].c : "var(--empty)";
+      const tipTxt = d ? `${label}: ${d[2].toFixed(1)} h of app work (${KIND[d[1]].short.toLowerCase()})` : `${label}: no app work`;
+      out += `<rect class="cal-cell" style="transition-delay:${w * 40}ms" x="${x}" y="${y}" width="${s}" height="${s}" rx="${Math.max(2, s / 5)}" fill="${fill}" data-tip="${esc(tipTxt)}"/>`;
+    }
+  }
+  el.innerHTML = out + "</svg>";
+}
+
+/* ---------- 5. savings ---------- */
+const SAVE = [
+  ["Building the day's room lists", "about 60 min a day by hand, 10 min to check now", 304],
+  ["Assigning rooms in HotSOS", "about 30 min of typing, now one button", 170],
+  ["Chasing room status", "about 20 min of calls, radio and walking a day", 122],
+  ["Staff schedule, attendance, forecast", "about 2 hours a week, now automatic", 104],
+  ["Budget tracking", "about 2 hours a week in spreadsheets", 104],
+  ["Engineering daily sheet", "about 10 min of typing a day", 61],
+  ["Performance reports", "about 2 hours a month of counting", 24]];
+const SMAX = 304, STOT = SAVE.reduce((s, r) => s + r[2], 0);
+document.getElementById("sv").innerHTML = SAVE.map(([a, b, h], i) =>
+  `<div class="lab">${a}<small>${b}</small></div><div class="tr" data-tip="${esc(a + ": about " + h + " hours a year")}"><div style="width:${h / SMAX * 100}%;transition-delay:${i * 90}ms"></div></div><div class="val">${h} h</div>`).join("")
+  + `<div class="lab total">Total</div><div class="tr" style="visibility:hidden"></div><div class="val total">${STOT} h</div>`;
+
+/* ---------- nav highlight ---------- */
+const links = [...document.querySelectorAll("nav.jump a")];
+const secIO = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("main section").forEach(s => secIO.observe(s));
+
+/* ---------- draw + resize ---------- */
+function drawAll(force) { drawInsp(); drawCal(); drawFlow(force); }
+drawAll(true);
+let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => drawAll(false), 120); });
+})();
+</script>
+</body>
+</html>
