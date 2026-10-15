@@ -304,7 +304,7 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
   <div class="sec-head">
     <span class="num">1 · Core job</span>
     <h2>The most rooms inspected per day on the team</h2>
-    <p>Inspectors check every cleaned room before a guest gets it. From January 1 to October 14, Hari inspected 1,124 rooms, the second-highest total, while on the schedule 11 fewer days than the average full-time inspector.</p>
+    <p>Inspectors check every cleaned room before a guest gets it. From January 1 to October 14, Hari inspected 1,124 rooms on 106 inspection days: 10.6 rooms a day, against a team average of 9.1.</p>
   </div>
   <div class="card chart" data-reveal>
     <h3>Rooms inspected per inspection day</h3>
@@ -312,19 +312,19 @@ footer{padding:40px 0 56px;color:var(--text-3);font-size:13.5px}
     <div id="insp-chart"></div>
   </div>
   <div class="card">
-    <h3>Side by side with the average full-time inspector</h3>
+    <h3>Side by side with the team average</h3>
     <div class="table-scroll">
     <table>
-      <thead><tr><th>Jan 1 – Oct 14, 2026</th><th class="v">Hari</th><th class="v">Average of the other 10</th><th>What it means</th></tr></thead>
+      <thead><tr><th>Jan 1 – Oct 14, 2026</th><th class="v">Hari</th><th class="v">Team average</th><th>Difference</th></tr></thead>
       <tbody>
-        <tr><td>Rooms inspected</td><td class="v me">1,124</td><td class="v">934</td><td class="muted small">20% more rooms</td></tr>
-        <tr><td>Days on the schedule</td><td class="v me">156</td><td class="v">167</td><td class="muted small">11 fewer days</td></tr>
-        <tr><td>Rooms inspected for every day on the schedule</td><td class="v me">7.2</td><td class="v">5.6</td><td class="muted small">29% more per day</td></tr>
-        <tr><td>Last-minute absences (days)</td><td class="v me">0</td><td class="v">1.7</td><td class="muted small">Always reliable</td></tr>
+        <tr><td>Rooms inspected</td><td class="v me">1,124</td><td class="v">934</td><td class="muted small">190 more rooms</td></tr>
+        <tr><td>Days with inspections</td><td class="v me">106</td><td class="v">103</td><td class="muted small">3 more days</td></tr>
+        <tr><td>Rooms inspected per inspection day</td><td class="v me">10.6</td><td class="v">9.1</td><td class="muted small">1.5 more rooms a day</td></tr>
+        <tr><td>Last-minute absences (days)</td><td class="v me">0</td><td class="v">1.7</td><td class="muted small">None</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">40 of Hari's 156 days on the schedule were other work (projects, special tasks), so the chart above counts only days with inspections. "Full-time" means on the schedule 3.5 or more days a week and still on the team.</p>
+    <p class="note">The rooms and days here count only days with check-out inspections, so Hari and the team are compared on the same kind of day. Hari was on the schedule 156 days; on the other 50 the work was something else (projects, Daily Service rounds, special tasks). “Team average” means the other 10 full-time inspectors: on the schedule 3.5 or more days a week and still on the team.</p>
   </div>
 </section>
 
@@ -567,10 +567,10 @@ function drawInsp() {
   const lab = W < 480 ? 62 : 84, val = 38, top = 30, bh = W < 480 ? 20 : 22, gap = 8, max = 11;
   const pw = W - lab - val - 10, x = v => lab + v / max * pw;
   const H = top + rows.length * (bh + gap);
-  let s = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Rooms inspected per inspection day. Hari ${rate(INSP[0]).toFixed(1)}, highest of 11; others average ${avg.toFixed(1)}.">`;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Rooms inspected per inspection day. Hari ${rate(INSP[0]).toFixed(1)}; team average ${avg.toFixed(1)}.">`;
   const ax = x(avg);
   s += `<line x1="${ax}" x2="${ax}" y1="${top - 8}" y2="${H - gap + 2}" stroke="var(--text-3)" stroke-dasharray="4 3"/>`;
-  s += `<text x="${ax - 6}" y="${top - 14}" text-anchor="end" font-size="12.5" fill="var(--text-2)">Others' average: ${avg.toFixed(1)}</text>`;
+  s += `<text x="${ax - 6}" y="${top - 14}" text-anchor="end" font-size="12.5" fill="var(--text-2)">Team average: ${avg.toFixed(1)}</text>`;
   rows.forEach((r, i) => {
     const y = top + i * (bh + gap), w = x(rate(r)) - lab;
     const tipTxt = `${r.who}: ${rate(r).toFixed(1)} rooms a day (${r.rooms.toLocaleString("en-US")} rooms over ${r.days} inspection days)`;
